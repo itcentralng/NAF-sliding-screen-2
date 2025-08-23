@@ -6,7 +6,7 @@
 // Section positions mapping
 const SECTION_POSITIONS = {
   'welcome.html': { section: 'home', position: 0 },
-  'distinguished-personalities.html': { section: 'home', position: 0 },
+  'explore-years.html': { section: 'home', position: 0 },
   'chiefs-accounts-budget.html': { section: 'chiefs', position: 1 },
   'commanders-081-pag.html': { section: 'commanders', position: 2 },
   'commandants-nafsfa.html': { section: 'commandants', position: 3 }
@@ -64,8 +64,8 @@ function getCurrentSection() {
 function navigateWithTransition(targetPage, targetSection) {
   const currentPage = window.location.pathname.split('/').pop();
   
-  // Check if we should use broken glass transition (welcome → distinguished personalities)
-  if (currentPage === 'welcome.html' && targetPage === 'distinguished-personalities.html') {
+  // Check if we should use broken glass transition (welcome → explore years)
+  if (currentPage === 'welcome.html' && targetPage === 'explore-years.html') {
     // Use broken glass transition
     navigateWithBrokenGlass(targetPage);
     return;
@@ -182,8 +182,8 @@ function navigateWithSlide(targetPage, targetSection) {
   // Determine the "from" section based on context
   let fromSection = currentSectionData.section;
   
-  // If we're on distinguished personalities page, use the stored last section
-  if (window.location.pathname.includes('distinguished-personalities.html')) {
+  // If we're on explore years page, use the stored last section
+  if (window.location.pathname.includes('explore-years.html')) {
     const lastSection = navState.getLastSection();
     if (lastSection && lastSection !== 'home') {
       fromSection = lastSection;
@@ -305,7 +305,7 @@ function enhanceBackButtons() {
         }, 50);
         
         setTimeout(() => {
-          navigateWithTransition('distinguished-personalities.html', 'home');
+          navigateWithTransition('explore-years.html', 'home');
         }, 800);
       });
     });
