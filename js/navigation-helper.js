@@ -3,13 +3,17 @@
  * Handles section transitions with calculated timing based on distance
  */
 
-// Section positions mapping
+// Section positions mapping for sliding screen 2 (decades-based)
 const SECTION_POSITIONS = {
   'welcome.html': { section: 'home', position: 0 },
   'explore-years.html': { section: 'home', position: 0 },
-  'chiefs-accounts-budget.html': { section: 'chiefs', position: 1 },
-  'commanders-081-pag.html': { section: 'commanders', position: 2 },
-  'commandants-nafsfa.html': { section: 'commandants', position: 3 }
+  'chiefs-1960s.html': { section: '1960s', position: 1 },
+  'chiefs-1970s.html': { section: '1970s', position: 2 },
+  'chiefs-1980s.html': { section: '1980s', position: 3 },
+  'chiefs-1990s.html': { section: '1990s', position: 4 },
+  'chiefs-2000s.html': { section: '2000s', position: 5 },
+  'chiefs-2010s.html': { section: '2010s', position: 6 },
+  'chiefs-2020s.html': { section: '2020s', position: 7 }
 };
 
 // Navigation state management
@@ -68,6 +72,13 @@ function navigateWithTransition(targetPage, targetSection) {
   if (currentPage === 'welcome.html' && targetPage === 'explore-years.html') {
     // Use broken glass transition
     navigateWithBrokenGlass(targetPage);
+    return;
+  }
+  
+  // Check if navigating to explore-years.html (sections page) - use direct navigation
+  if (targetPage === 'explore-years.html') {
+    // Direct navigation without gradient transition (same as sliding screen 1)
+    window.location.href = targetPage;
     return;
   }
   
@@ -228,14 +239,22 @@ function initializeSlidingNavigation() {
         return;
       }
       
-      // Determine target section based on href
+      // Determine target section based on href for decades navigation
       let targetSection = 'home';
-      if (href.includes('chiefs-accounts-budget.html')) {
-        targetSection = 'chiefs';
-      } else if (href.includes('commanders-081-pag.html')) {
-        targetSection = 'commanders';
-      } else if (href.includes('commandants-nafsfa.html')) {
-        targetSection = 'commandants';
+      if (href.includes('chiefs-1960s.html')) {
+        targetSection = '1960s';
+      } else if (href.includes('chiefs-1970s.html')) {
+        targetSection = '1970s';
+      } else if (href.includes('chiefs-1980s.html')) {
+        targetSection = '1980s';
+      } else if (href.includes('chiefs-1990s.html')) {
+        targetSection = '1990s';
+      } else if (href.includes('chiefs-2000s.html')) {
+        targetSection = '2000s';
+      } else if (href.includes('chiefs-2010s.html')) {
+        targetSection = '2010s';
+      } else if (href.includes('chiefs-2020s.html')) {
+        targetSection = '2020s';
       }
       
       // Add click event listener for sliding transition
@@ -294,7 +313,7 @@ function enhanceBackButtons() {
         overlay.innerHTML = `
           <div style="text-align: center;">
             <i class="fas fa-arrow-left" style="font-size: 30px; margin-bottom: 20px; animation: slideLeft 1s infinite;"></i>
-            <br>Sliding back to sections...
+            <br>Sliding back to decades...
           </div>
         `;
         
@@ -305,7 +324,9 @@ function enhanceBackButtons() {
         }, 50);
         
         setTimeout(() => {
-          navigateWithTransition('explore-years.html', 'home');
+          // Navigate directly to explore-years.html without gradient transition
+          // This matches the behavior in sliding screen 1
+          window.location.href = 'explore-years.html';
         }, 800);
       });
     });
