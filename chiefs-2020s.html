@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/profiles.css">
+  <title>Chiefs of Air Staff - 2020s</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar glass-background">
+      <div class="navbar-content">
+        <div class="back-button">
+          <a href="explore-years.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Years</span>
+          </a>
+        </div>
+        <div class="navbar-title">
+          <h2>Chiefs of Air Staff - 2020-2025</h2>
+          <p>Contemporary leadership and future-focused strategic initiatives</p>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="chiefs-gallery">
+    <div class="chiefs-grid">
+      <!-- Air Marshal Isiaka Oladayo Amao (2021-2023) -->
+      <div class="chief-card glass-background" onclick="showProfile('amao')">
+        <div class="chief-image">
+          <img src="img/chiefs/image21.png" alt="Air Marshal Isiaka Oladayo Amao" onerror="this.src='img/avatar-military.png'">
+        </div>
+        <div class="chief-info">
+          <h3>AM Isiaka Oladayo Amao</h3>
+          <p class="service-period">2021 - 2023</p>
+          <p class="chief-title">21st Chief of Air Staff</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile Modal -->
+  <div id="profileModal" class="profile-modal">
+    <div class="profile-modal-content glass-background">
+      <span class="profile-close" onclick="closeProfile()">&times;</span>
+      <div id="profileContent">
+        <!-- Profile content will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/socket.io.min.js"></script>
+  <script src="js/navigation-helper.js"></script>
+  <script src="js/chiefs-profiles.js"></script>
+  <script>
+    // Initialize socket connection
+    const socket = io.connect("http://127.0.0.1:5550");
+
+    // Socket event listeners
+    socket.on('connect', function() {
+      console.log('Connected to server');
+    });
+    
+    socket.on('arduino_response', function(data) {
+      console.log('Arduino response:', data);
+    });
+    
+    socket.on('disconnect', function() {
+      console.log('Disconnected from server');
+    });
+
+    // Page fade-in effect
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.style.opacity = '0';
+      document.body.style.transition = 'opacity 0.6s ease-in';
+      
+      setTimeout(() => {
+        document.body.style.opacity = '1';
+      }, 100);
+      
+      // Staggered animation for chief cards
+      const chiefCards = document.querySelectorAll('.chief-card');
+      chiefCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 200 + (index * 150));
+      });
+    });
+  </script>
+</body>
+</html>

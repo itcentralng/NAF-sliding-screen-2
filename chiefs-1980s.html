@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/profiles.css">
+  <title>Chiefs of Air Staff - 1980s</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar glass-background">
+      <div class="navbar-content">
+        <div class="back-button">
+          <a href="explore-years.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Years</span>
+          </a>
+        </div>
+        <div class="navbar-title">
+          <h2>Chiefs of Air Staff - 1980-1989</h2>
+          <p>Expansion and technological advancement of NAF operations</p>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="chiefs-gallery">
+    <div class="chiefs-grid">
+      <!-- Air Vice-Marshal Abdullahi Dominic Bello (1980-1984) -->
+      <div class="chief-card glass-background" onclick="showProfile('bello')">
+        <div class="chief-image">
+          <img src="img/chiefs/image7.jpg" alt="Air Vice-Marshal Abdullahi Dominic Bello" onerror="this.src='img/avatar-military.png'">
+        </div>
+        <div class="chief-info">
+          <h3>AVM Abdullahi Dominic Bello</h3>
+          <p class="service-period">1980 - 1984</p>
+          <p class="chief-title">7th Chief of Air Staff</p>
+        </div>
+      </div>
+
+      <!-- Air Marshal Ibrahim M Alfa (1984-1989) -->
+      <div class="chief-card glass-background" onclick="showProfile('alfa')">
+        <div class="chief-image">
+          <img src="img/chiefs/image8.png" alt="Air Marshal Ibrahim M Alfa" onerror="this.src='img/avatar-military.png'">
+        </div>
+        <div class="chief-info">
+          <h3>Air Marshal Ibrahim M Alfa</h3>
+          <p class="service-period">1984 - 1989</p>
+          <p class="chief-title">8th Chief of Air Staff</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile Modal -->
+  <div id="profileModal" class="profile-modal">
+    <div class="profile-modal-content glass-background">
+      <span class="profile-close" onclick="closeProfile()">&times;</span>
+      <div id="profileContent">
+        <!-- Profile content will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/socket.io.min.js"></script>
+  <script src="js/navigation-helper.js"></script>
+  <script src="js/chiefs-profiles.js"></script>
+  <script>
+    // Initialize socket connection
+    const socket = io.connect("http://127.0.0.1:5550");
+
+    // Socket event listeners
+    socket.on('connect', function() {
+      console.log('Connected to server');
+    });
+    
+    socket.on('arduino_response', function(data) {
+      console.log('Arduino response:', data);
+    });
+    
+    socket.on('disconnect', function() {
+      console.log('Disconnected from server');
+    });
+
+    // Page fade-in effect
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.style.opacity = '0';
+      document.body.style.transition = 'opacity 0.6s ease-in';
+      
+      setTimeout(() => {
+        document.body.style.opacity = '1';
+      }, 100);
+      
+      // Staggered animation for chief cards
+      const chiefCards = document.querySelectorAll('.chief-card');
+      chiefCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 200 + (index * 150));
+      });
+    });
+  </script>
+</body>
+</html>
