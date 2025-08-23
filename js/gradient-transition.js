@@ -7,23 +7,39 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const container = document.querySelector('.gradient-container');
   
-  // Section mapping with positions (0=home, 1=chiefs, 2=commanders, 3=commandants)
+  // Section mapping with positions (0=home, 1=1960s, 2=1970s, 3=1980s, 4=1990s, 5=2000s, 6=2010s, 7=2020s)
   const sectionMap = {
     'home': {
       position: 0,
       name: 'Home'
     },
-    'chiefs': {
+    '1960s': {
       position: 1,
-      name: 'Chiefs of Accounts & Budget'
+      name: '1963 - 1969'
     },
-    'commanders': {
+    '1970s': {
       position: 2,
-      name: 'Commanders 081 PAG'
+      name: '1970 - 1979'
     },
-    'commandants': {
+    '1980s': {
       position: 3,
-      name: 'Commandants NAFSFA'
+      name: '1980 - 1989'
+    },
+    '1990s': {
+      position: 4,
+      name: '1990 - 1999'
+    },
+    '2000s': {
+      position: 5,
+      name: '2000 - 2009'
+    },
+    '2010s': {
+      position: 6,
+      name: '2010 - 2019'
+    },
+    '2020s': {
+      position: 7,
+      name: '2020 - 2025'
     }
   };
   
@@ -41,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const totalDistance = endPosition - startPosition;
   
   // Calculate animation duration: 7 seconds per section traversed
-  // For example: home to commandants = 3 sections = 21 seconds
-  // commanders to commandants = 1 section = 7 seconds
+  // For example: home to 2020s = 7 sections = 49 seconds
+  // 1960s to 2020s = 6 sections = 42 seconds
   const sectionsToTraverse = Math.abs(totalDistance);
   const animationDuration = sectionsToTraverse * 7000; // 7 seconds per section
   
@@ -76,8 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   function setContainerPosition(position) {
-    // Each section is 25% wide, so we translate by position * -25%
-    const translateX = position * -25;
+    // Each section is 12.5% wide (100% / 8 sections), so we translate by position * -12.5%
+    const translateX = position * -12.5;
     container.style.transform = `translateX(${translateX}%)`;
   }
   
