@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/profiles.css">
+  <link rel="stylesheet" href="webfonts/fa-solid-900.woff2">
+  <link rel="stylesheet" href="css/all.css">
+  <title>Chiefs of Accounts and Budget - NAF History</title>
+  <style>
+    :root {
+      --primary-gold: #D4AF37;
+      --secondary-gold: #B8860B;
+      --text-light: rgba(255, 255, 255, 0.95);
+      --text-muted: rgba(255, 255, 255, 0.7);
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
+      --shadow-strong: 0 15px 45px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Enhanced Navbar Styling */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .navbar {
+      width: 100%;
+      padding: 1rem 2rem;
+      color: #fff;
+    }
+
+    .navbar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1400px;
+      margin: 0 auto;
+      gap: 2rem;
+    }
+
+    .back-button {
+      flex-shrink: 0;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-light);
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .back-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .back-btn:hover::before {
+      left: 100%;
+    }
+
+    .back-btn:hover {
+      transform: translateX(-3px) translateY(-1px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+      border-color: var(--primary-gold);
+      color: #fff;
+    }
+
+    .back-btn i {
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .back-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .back-btn:hover i {
+      transform: translateX(-3px);
+    }
+
+    .navbar-title {
+      flex-grow: 1;
+      text-align: right;
+    }
+
+    .navbar-title h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary-gold);
+      margin-bottom: 0.25rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-title p {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+
+    .chiefs-container {
+      min-height: 100vh;
+      padding: 6rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .chiefs-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .chiefs-header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--primary-gold);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .chiefs-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .chiefs-main {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .chiefs-sidebar {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      height: fit-content;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: sticky;
+      top: 6rem;
+    }
+
+    .sidebar-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .sidebar-header h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--primary-gold);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar-header span {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .chiefs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .chief-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      background: transparent;
+      border: 1px solid transparent;
+    }
+
+    .chief-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--glass-border);
+      transform: translateX(5px);
+    }
+
+    .chief-item.active {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(184, 134, 11, 0.1));
+      border-color: var(--primary-gold);
+      transform: translateX(10px);
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .chief-item .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--glass-border);
+      transition: border-color 0.3s ease;
+    }
+
+    .chief-item.active .avatar {
+      border-color: var(--primary-gold);
+    }
+
+    .chief-item .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .chief-item .info h4 {
+      color: var(--text-light);
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      line-height: 1.2;
+    }
+
+    .chief-item .info span {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    .profile-display {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-soft);
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-hero {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      align-items: flex-start;
+    }
+
+    .profile-image {
+      flex: 0 0 200px;
+      height: 250px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-strong);
+      border: 3px solid var(--primary-gold);
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .profile-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, transparent 0%, rgba(212, 175, 55, 0.1) 100%);
+      pointer-events: none;
+    }
+
+    .profile-details {
+      flex: 1;
+      padding-top: 1rem;
+    }
+
+    .profile-name {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--primary-gold);
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      line-height: 1.2;
+    }
+
+    .profile-title {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .profile-stats {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      flex: 1;
+    }
+
+    .stat-value {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary-gold);
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+    }
+
+    .profile-biography {
+      flex: 1;
+    }
+
+    .biography-title {
+      font-family: 'Cinzel', serif;
+      color: var(--primary-gold);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .biography-text {
+      color: var(--text-light);
+      line-height: 1.8;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    .loading-state {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid var(--glass-border);
+      border-top: 3px solid var(--primary-gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .navbar {
+        padding: 1rem 1.5rem;
+      }
+
+      .navbar-content {
+        gap: 1rem;
+      }
+
+      .chiefs-container {
+        padding: 5rem 1.5rem 2rem;
+      }
+
+      .chiefs-main {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .chiefs-sidebar {
+        position: relative;
+        top: 0;
+        max-height: none;
+      }
+
+      .chiefs-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+      }
+
+      .chief-item {
+        flex: 0 0 200px;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+      }
+
+      .navbar-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .navbar-title {
+        text-align: center;
+      }
+
+      .navbar-title h2 {
+        font-size: 1.5rem;
+      }
+
+      .back-btn span {
+        display: none;
+      }
+
+      .back-btn {
+        padding: 0.75rem;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+      }
+
+      .chiefs-container {
+        padding: 8rem 1rem 2rem;
+      }
+
+      .chiefs-header h1 {
+        font-size: 2rem;
+      }
+
+      .profile-hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .profile-image {
+        flex: 0 0 180px;
+        height: 220px;
+      }
+
+      .profile-name {
+        font-size: 1.6rem;
+      }
+
+      .profile-stats {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar glass-background">
+      <div class="navbar-content">
+        <div class="back-button">
+          <a href="distinguished-personalities.html" class="back-btn glass-background">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Sections</span>
+          </a>
+        </div>
+        <div class="navbar-title">
+          <h2>Chiefs of Accounts and Budget</h2>
+          <p>Directors Finance and Accounts</p>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="chiefs-container">
+    <div class="chiefs-header">
+      <h1>Chiefs of Accounts and Budget</h1>
+      <p>Distinguished financial leaders who have shaped the Nigerian Air Force's fiscal excellence and accountability through their vision, expertise, and unwavering dedication to service.</p>
+    </div>
+
+    <div class="chiefs-main">
+      <!-- Sidebar with chiefs list -->
+      <aside class="chiefs-sidebar">
+        <div class="sidebar-header">
+          <h3>Select Chief</h3>
+          <span>Click to view profile</span>
+        </div>
+        <div class="chiefs-list">
+          <div class="chief-item active" data-chief="nwagwu">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="AVM CU Nwagwu">
+            </div>
+            <div class="info">
+              <h4>AVM CU Nwagwu</h4>
+              <span>Jun 28 - Present</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="ochomma">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="AVM JA Ochomma">
+            </div>
+            <div class="info">
+              <h4>AVM JA Ochomma</h4>
+              <span>Dec 21 - Jun 23</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="ogbeche">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="AVM CA Ogbeche">
+            </div>
+            <div class="info">
+              <h4>AVM CA Ogbeche</h4>
+              <span>Dec 15 - Dec 21</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="adigun">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="AVM JB Adigun">
+            </div>
+            <div class="info">
+              <h4>AVM JB Adigun</h4>
+              <span>Jan 14 - Dec 15</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="dabo">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="AVM MR Dabo">
+            </div>
+            <div class="info">
+              <h4>AVM MR Dabo</h4>
+              <span>Jan 14 - Jan 14</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="yushau">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="Air Cdre SA Yushau">
+            </div>
+            <div class="info">
+              <h4>Air Cdre SA Yushau</h4>
+              <span>Oct 10 - Jan 24</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="bagare">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="GP AB Bagare">
+            </div>
+            <div class="info">
+              <h4>GP AB Bagare</h4>
+              <span>Jul 11 - Dec 11</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="malomo">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="GP AA Malomo">
+            </div>
+            <div class="info">
+              <h4>GP AA Malomo</h4>
+              <span>Jan 09 - Oct 10</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="saleh">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="GP M Saleh">
+            </div>
+            <div class="info">
+              <h4>GP M Saleh</h4>
+              <span>Jan 08 - Jan 09</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="suleiman">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="GP YA Suleiman">
+            </div>
+            <div class="info">
+              <h4>GP YA Suleiman</h4>
+              <span>Jun 06 - Jan 08</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="sabiyi">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="GP BB Sabiyi">
+            </div>
+            <div class="info">
+              <h4>GP BB Sabiyi</h4>
+              <span>Dec 02 - Jun 06</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="essien">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="GP EU Essien">
+            </div>
+            <div class="info">
+              <h4>GP EU Essien</h4>
+              <span>Aug 99 - Dec 02</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="sotubo">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="GP BOA Sotubo">
+            </div>
+            <div class="info">
+              <h4>GP BOA Sotubo</h4>
+              <span>Apr 96 - Aug 99</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="oghenekowho">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="GP GA Oghenekowho">
+            </div>
+            <div class="info">
+              <h4>GP GA Oghenekowho</h4>
+              <span>Sep 90 - Apr 96</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="taylor">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="GP GA Taylor">
+            </div>
+            <div class="info">
+              <h4>GP GA Taylor</h4>
+              <span>Feb 85 - Sep 90</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="ogunmiloro">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="GP EA Ogunmiloro">
+            </div>
+            <div class="info">
+              <h4>GP EA Ogunmiloro</h4>
+              <span>Oct 79 - Feb 85</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="yeldu">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="GP A Yeldu">
+            </div>
+            <div class="info">
+              <h4>GP A Yeldu</h4>
+              <span>Apr 79 - Oct 79</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="dangaji">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="WG CDR LA Dangaji">
+            </div>
+            <div class="info">
+              <h4>WG CDR LA Dangaji</h4>
+              <span>Nov 75 - Apr 79</span>
+            </div>
+          </div>
+          <div class="chief-item" data-chief="fajobi">
+            <div class="avatar">
+              <img src="img/avatar-military.png" alt="Lt Col FO Fajobi">
+            </div>
+            <div class="info">
+              <h4>Lt Col FO Fajobi</h4>
+              <span>Sep 71 - Nov 75</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main profile display -->
+      <section class="profile-display">
+        <div id="profile-content">
+          <div class="loading-state">
+            <div class="loading-spinner"></div>
+            <p style="color: var(--text-muted);">Loading profile...</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/navigation-helper.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    // Chiefs profiles data
+    const chiefsData = {
+      nwagwu: {
+        name: "AIR VICE MARSHAL CU NWAGWU (NAF/2176)",
+        title: "Chief of Accounts and Budget, June 28, 2023 - Present",
+        image: "img/avatar-military.png",
+        yearsOfService: "Current",
+        appointments: "Hall of Fame Founder",
+        biography: "The Nigerian Air Force Finance Specialty inducts Air Vice Marshal CU Nwagwu, into the Hall of Fame – an edifice he himself conceived and actualized while serving as the Chief of Accounts and Budget. Air Vice Marshal Nwagwu redefined leadership by fostering a culture of camaraderie where every personnel of the Finance Specialty felt valued. He led with purposeful leadership that fortified the Specialty as one family. Air Vice Marshal Nwagwu also spearheaded the monumental construction and relocation of the Nigerian Air Force School of Finance and Accounts to its permanent site in Ibadan, a visionary investment in the future of the Specialty. This state-of-the-art institution, hailed as a 'citadel of financial excellence,' now trains generations of professionals, ensuring the Specialty's readiness for 21st-century challenges. His hands-on oversight of this legacy project, from blueprint to unveiling, stands as a testament to his relentless drive to institutionalize knowledge and empower personnel of the Finance Specialty. Moreover, Air Vice Marshal Nwagwu's foresight gave birth to this Hall of Fame, a sacred space where the Specialty's history and heroes are enshrined. By championing its establishment, he ensured that the sacrifices and triumphs of predecessors would inspire successors, cementing institutional pride and continuity."
+      },
+      ochomma: {
+        name: "AIR VICE MARSHAL JA OCHOMMA (NAF/2088)",
+        title: "Chief of Accounts and Budget, December 31, 2021 - June 26, 2023",
+        image: "img/avatar-military.png",
+        yearsOfService: "1.5 Years",
+        appointments: "Strategic Finance Leader",
+        biography: "The Nigerian Air Force Finance Specialty inducts Air Vice Marshal JA Ochomma into its Hall of Fame. Air Vice Marshal Ochomma's unwavering dedication to fiscal accountability and strategic resource management fortified the backbone of the Nigerian Air Force's operational readiness. His tenure as Chief of Accounts and Budget ushered innovative frameworks for fund allocation, audit compliance and fiscal forecasting. Beyond numbers, Air Vice Marshal Ochomma embodied the ethos of servant leadership. He mentored generations of finance personnel, instilling in them the values of discipline, innovation and ethical rigor. His relentless advocacy for modernization bridged tradition with technology, ensuring the Finance Specialty remained agile in an evolving world."
+      },
+      ogbeche: {
+        name: "AIR VICE MARSHAL CA OGBECHE (NAF/2047)",
+        title: "Chief of Accounts and Budget, December 13, 2015 - December 31, 2021",
+        image: "img/avatar-military.png",
+        yearsOfService: "6 Years",
+        appointments: "Reform Leader",
+        biography: "The Nigerian Air Force Finance Specialty inducts Air Vice Marshal CA Ogbeche into its Hall of Fame. Air Vice Marshal CA Ogbeche's bold reforms in procurement finance eliminated waste, ensuring every allocation advanced the Nigerian Air Force's strategic vision. He successfully led the tri-Service effort that oversaw the seamless implementation of landmark Federal Government financial reforms, including the Integrated Personnel Payroll Information System, the Government Integrated Financial Management Information System and the Treasury Single Account in the Armed Forces of Nigeria. The holistic financial framework integrated NAF financial management architecture into a seamless ecosystem. His diplomatic acumen also secured strategic partnerships that unlocked critical funding streams and bolstered the NAF's operational capabilities."
+      },
+      adigun: {
+        name: "AIR VICE MARSHAL JB ADIGUN (NAF/1550)",
+        title: "Chief of Accounts and Budget, January 21, 2014 - December 13, 2015",
+        image: "img/avatar-military.png",
+        yearsOfService: "2 Years",
+        appointments: "Transformational Leader",
+        biography: "The Nigerian Air Force Finance Specialty inducts Air Vice Marshal JB Adigun into its Hall of Fame. Air Vice Marshal Adigun's tenure as Chief of Accounts and Budget was a watershed moment and an era of transformation for the Specialty. With strategic foresight, he championed the upgrade of the erstwhile Directorate of Finance and Accounts into the Accounts and Budget Branch, a landmark restructuring that established four specialized directorates under the Branch. He also championed the establishment of the Specialty' independent financial training institution, the NAF School of Finance and Accounts. The creation of these indelible structures stand as a testament to his visionary leadership, ensuring the finance specialty took its rightful place in the Nigerian Air Force Establishment. A trailblazer, Air Vice Marshal Adigun also made history as one among the first set of finance officers to be promoted to the rank of Air Vice Marshal."
+      },
+      dabo: {
+        name: "AIR VICE MARSHAL MR DABO (NAF/1701)",
+        title: "Director of Finance and Accounts, January 1, 2014 - January 21, 2014",
+        image: "img/avatar-military.png",
+        yearsOfService: "20 Days",
+        appointments: "Historic Pioneer",
+        biography: "The Nigerian Air Force Finance Specialty inducts Air Vice Marshal MR Dabo into its Hall of Fame. Though short, Air Vice Marshal MR Dabo's tenure as Director of Finance and Accounts kickstarted the Specialty' first long-term financial sustainability plan. His forensic audits closed several loopholes, reinvesting valuable resources into critical sectors of the NAF. During his short tenure, the Specialty achieved unprecedented audit compliance ratings, earning accolades from the Chief of the Air Staff. Air Vice Marshal Dabo also made history as one among the first set of finance officers to be promoted to the rank of Air Vice Marshal, breaking a ceiling that opened up new possibilities for all finance officers."
+      },
+      yushau: {
+        name: "AIR COMMODORE SA YUSHAU (NAF/1586)",
+        title: "Director of Finance and Accounts, October 21, 2010 - January 1, 2024",
+        image: "img/avatar-military.png",
+        yearsOfService: "13+ Years",
+        appointments: "Decentralization Pioneer",
+        biography: "The Nigerian Air Force Finance Specialty inducts Air Commodore SA Yushau into its Hall of Fame. Air Commodore SA Yushau brought transformative energy to the financial architecture of the Nigerian Air Force, with a focus on decentralization and empowerment. He strengthened the capacity of Command and Unit Finance Offices by equipping them with tools, training, and autonomy needed to function effectively at the tactical level. Under his leadership, welfare schemes for personnel were institutionalized, creating safety nets that improved morale and financial security across the ranks. Air Commodore SA Yushau's tenure remains a benchmark for inclusive reform and personnel-centred financial management."
+      },
+      bagare: {
+        name: "GROUP CAPTAIN AB BAGARE (NAF/2053)",
+        title: "Acting Director of Finance and Accounts, July 8, 2011 - December 20, 2011",
+        image: "img/avatar-military.png",
+        yearsOfService: "5 Months",
+        appointments: "Acting Director",
+        biography: "The Nigerian Air Force Finance Specialty inducts Group Captain AB Bagare into its Hall of Fame. Group Captain AB Bagare provided firm and competent leadership during his six-month acting tenure as Director of Finance and Accounts. Tasked with holding the reins in the absence of the substantive DFA, he ensured uninterrupted financial operations, timely disbursements, and strict adherence to fiscal protocols. His steady hand reassured the NAF leadership and preserved institutional momentum. Known for his methodical precision and reliability, he demonstrated that leadership effectiveness lies not in titles but in trust. He often affirmed, 'In finance, consistency is the true currency of confidence.'"
+      },
+      malomo: {
+        name: "GROUP CAPTAIN AA MALOMO (NAF/1411)",
+        title: "Director of Finance and Accounts, January 7, 2009 - October 21, 2010",
+        image: "img/avatar-military.png",
+        yearsOfService: "2 Years",
+        appointments: "Welfare Pioneer",
+        biography: "The Nigerian Air Force Finance Specialty inducts Group Captain AA Malomo into its Hall of Fame. Group Captain Malomo's leadership was grounded in empathy, equity, and respect for human value. His tenure marked a turning point in the welfare architecture of the NAF Finance Specialty and his legacy continues to be ever present in the lives of all finance personnel. With a deep sense of justice and inclusivity, he introduced uniform welfare packages, regardless of unit or location. This bold initiative not only elevated the dignity of finance professionals across the Service but also fostered unity, morale, and a renewed sense of belonging. Group Captain AA Malomo's name will forever be etched into the history of the Finance Specialty."
+      },
+      saleh: {
+        name: "GROUP CAPTAIN M SALEH (NAF/1710)",
+        title: "Acting Director of Finance and Accounts, January 10, 2008 - January 7, 2009",
+        image: "img/avatar-military.png",
+        yearsOfService: "1 Year",
+        appointments: "Transitional Leader",
+        biography: "The Nigerian Air Force Finance Specialty inducts Group Captain M Saleh into its Hall of Fame. Despite serving in an acting capacity, Group Captain M Saleh provided steady leadership during a transitional period for the Finance Specialty. He ensured continuity in financial operations, stabilized personnel morale, and upheld accountability standards across finance units. His pragmatic approach to problem-solving helped sustain essential welfare initiatives and maintain the credibility of the system during a delicate phase. A quiet stabilizer with a deep sense of duty, he believed that 'Leadership is not always about duration—it is about direction and discipline.' His time in office exemplified resilience and responsible stewardship."
+      },
+      suleiman: {
+        name: "GROUP CAPTAIN YA SULEIMAN (NAF/1302)",
+        title: "Director of Finance and Accounts, June 28, 2006 - January 10, 2008",
+        image: "img/avatar-military.png",
+        yearsOfService: "1.5 Years",
+        appointments: "Innovation Leader",
+        biography: "The Nigerian Air Force Finance Specialty inducts Group Captain YA Suleiman into its Hall of Fame. Group Captain YA Suleiman introduced innovations that reduced salary processing times by over 70 percent and redirected funding to strategic initiatives. A fierce advocate for gender equity, he shattered barriers, mentoring women in finance and ensuring their voices shaped policy. During his time, the first female finance officer was commissioned and several more airwomen were recruited as pay clerks. A philosopher of per excellence, he often declared, 'Finance without empathy is arithmetic without a soul'."
+      },
+      sabiyi: {
+        name: "GROUP CAPTAIN BB SABIYI (NAF/1280)",
+        title: "Director of Finance and Accounts, December 31, 2002 - June 28, 2006",
+        image: "img/avatar-military.png",
+        yearsOfService: "3.5 Years",
+        appointments: "Control Systems Pioneer",
+        biography: "The Nigerian Air Force Finance Specialty inducts Group Captain BB Sabiyi into its Hall of Fame. Group Captain BB Sabiyi introduced robust control systems that improved transparency and accountability across the NAF. He spearheaded the reorganization of accounting processes, ensuring seamless integration between budgeting, disbursement, and reporting functions. Recognizing the need for operational adaptability, he pioneered the deployment of mobile finance teams to support forward operating bases. His tenure was marked by calm efficiency and strategic foresight. Ever grounded in principle, he was known to say, 'Discipline in finance is not a constraint—it is the guardrail of trust.'"
+      },
+      essien: {
+        name: "GROUP CAPTAIN EU ESSIEN (NAF/1461)",
+        title: "Director of Finance and Accounts, August 28, 1999 - December 31, 2002",
+        image: "img/avatar-military.png",
+        yearsOfService: "3+ Years",
+        appointments: "Modernization Leader",
+        biography: "Group Captain EU Essien's leadership blended pragmatism with efficiency. He modernized payroll systems, ensuring timely compensation for personnel in even the remotest NAF locations. His crisis-management acumen shone during economic downturns, balancing austerity with compassion. By establishing the Specialty's first welfare fund for finance staff, he reminded all that the Specialty's strength begins with the well-being of its personnel."
+      },
+      sotubo: {
+        name: "GROUP CAPTAIN BOA SOTUBO (NAF/879)",
+        title: "Director of Finance and Accounts, April 30, 1996 - August 25, 1999",
+        image: "img/avatar-military.png",
+        yearsOfService: "3+ Years",
+        appointments: "Accountability Champion",
+        biography: "A sentinel of accountability, Group Captain BOA Sotubo reformed and updated the NAF accounting systems to ensure transparency, thereby restoring faith in the Finance Specialty. He introduced real-time expenditure tracking systems, earning the Specialty unprecedented public trust. His 'Finance for All' workshops democratized fiscal literacy, empowering seasoned personnel to lead. In his hands, numbers became narratives of patriotism, each decimal a testament to the Specialty's commitment to integrity."
+      },
+      oghenekowho: {
+        name: "GROUP CAPTAIN GA OGHENEKOWHO (NAF/491)",
+        title: "Director of Finance and Accounts, September 25, 1990 - April 29, 1996",
+        image: "img/avatar-military.png",
+        yearsOfService: "5.5 Years",
+        appointments: "Strategic Genius",
+        biography: "Group Captain GA Oghenekowho's strategic genius lies in his ability to harmonize fiscal prudence with bold policies. He pioneered novel budgeting initiatives, aligning defense spending with sustainability goals without compromising readiness. Group Captain Oghenekowho's financial prowess was instrumental to the funding of the NAF during the Liberia operations. A bridge-builder, he forged alliances with critical institutions, unlocking resources that fortified the Specialty's impact. His advocacy for veteran pension reforms brought dignity to heroes of that war. His legacy was a blueprint for progress that outlives tenure."
+      },
+      taylor: {
+        name: "GROUP CAPTAIN GA TAYLOR (NAF/141)",
+        title: "Director of Finance and Accounts, February 28, 1985 - September 24, 1990",
+        image: "img/avatar-military.png",
+        yearsOfService: "5.5 Years",
+        appointments: "Resilience Architect",
+        biography: "An architect of fiscal resilience, Group Captain GA Taylor engineered the NAF's first defense contingency fund, a lifeline during unforeseen crises. He slashed bureaucratic redundancies, redirecting millions to build infrastructure and enhance welfare. His open-door ethos nurtured a culture where every personnel's input shaped policy. To serve under Group Captain Taylor was to learn that true leadership thrives not in authority, but in service."
+      },
+      ogunmiloro: {
+        name: "GROUP CAPTAIN EA OGUNMILORO (NAF/298)",
+        title: "Director of Finance and Accounts, October 5, 1979 - February 25, 1985",
+        image: "img/avatar-military.png",
+        yearsOfService: "5+ Years",
+        appointments: "Innovation Pioneer",
+        biography: "Group Captain EA Ogunmiloro's tenure redefined innovation, spearheading the first efforts to centralize pay systems that eliminated bureaucracies and restored efficiency in institutional processes. He masterminded crisis-response funding mechanisms, ensuring uninterrupted funding for the NAF. A vocal advocate for equity, he dismantled systemic barriers, amplifying opportunities for underrepresented voices. His leadership, marked by courage and compassion, cemented the Finance Specialty as both shield and sanctuary."
+      },
+      yeldu: {
+        name: "GROUP CAPTAIN A YELDU (NAF/308)",
+        title: "Acting Director of Finance and Accounts, April 11, 1979 - October 14, 1979",
+        image: "img/avatar-military.png",
+        yearsOfService: "6 Months",
+        appointments: "Ethics Pioneer",
+        biography: "With unyielding integrity, Group Captain A Yeldu elevated the Specialty's fiscal discipline, instituting rigorous audit protocols that became lasting benchmarks. He navigated economic turbulence with calm resolve, reallocating resources to safeguard personnel welfare and operational readiness. A mentor to countless professionals, he authored the Specialty's first ethics training curriculum, embedding accountability into its core processes. His brief but impactful tenure proved that financial stewardship is not merely a duty but a covenant with the nation's security."
+      },
+      dangaji: {
+        name: "WING COMMANDER LA DANGAJI (NAF/274)",
+        title: "Acting Director of Finance and Accounts, November 14, 1975 - April 11, 1979",
+        image: "img/avatar-military.png",
+        yearsOfService: "3+ Years",
+        appointments: "Foundation Builder",
+        biography: "Wing Commander LA Dangaji transformed financial governance through budget precision and innovative resource optimization frameworks. He pioneered integration of accounting principles into NAF finances and revolutionized forecasting accuracy, ensuring seamless support for high-stakes missions. Beyond numbers, he fostered collaboration between various NAF departments that bridged gaps between policy and execution. His legacy of a young Finance Specialty empowered by agility, transparency, and unshakable trust stands as a testament to leadership that turns vision into victory."
+      },
+      fajobi: {
+        name: "LIEUTENANT COLONEL FO FAJOBI (NAF/281)",
+        title: "Chief Paymaster, September 1, 1971 - November 14, 1975",
+        image: "img/avatar-military.png",
+        yearsOfService: "4+ Years",
+        appointments: "Founding Father",
+        biography: "As the first leader of the Nigerian Air Force Finance Specialty, Lieutenant Colonel FO Fajobi laid the bedrock of integrity and innovation during Nigeria's formative post-civil war era. He pioneered the foundational systems that ensured timely remuneration for Nigeria's earliest air defenders, navigating logistical challenges and limited institutional establishment. His visionary initiatives of standardized pay protocols and ethical procurement practices became the blueprint for generations. He personally championed welfare advances for personnel, ensuring no airman's family endured hardship. Lieutenant Colonel Fajobi's indelible mark transcends time, a testament to the saying that 'the boldness of pioneers defines the destiny of institutions'."
+      }
+    };
+
+    // Profile display functionality
+    function displayProfile(chiefKey) {
+      const profileContent = document.getElementById('profile-content');
+      const chief = chiefsData[chiefKey];
+      
+      if (!chief) return;
+
+      profileContent.innerHTML = `
+        <div class="profile-hero fade-in">
+          <div class="profile-image">
+            <img src="${chief.image}" alt="${chief.name}">
+          </div>
+          <div class="profile-details">
+            <h1 class="profile-name">${chief.name}</h1>
+            <p class="profile-title">${chief.title}</p>
+            <div class="profile-stats">
+              <div class="stat-item">
+                <span class="stat-value">${chief.yearsOfService}</span>
+                <span class="stat-label">Service Period</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">${chief.appointments}</span>
+                <span class="stat-label">Legacy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-biography fade-in">
+          <h2 class="biography-title">
+            <i class="fas fa-medal" style="color: var(--primary-gold);"></i>
+            Hall of Fame Biography
+          </h2>
+          <p class="biography-text">${chief.biography}</p>
+        </div>
+      `;
+    }
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+      const chiefItems = document.querySelectorAll('.chief-item');
+      
+      // Display first chief by default
+      setTimeout(() => {
+        displayProfile('nwagwu');
+      }, 500);
+
+      // Handle chief selection
+      chiefItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // Update active state
+          chiefItems.forEach(i => i.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Display selected profile
+          const chiefKey = this.dataset.chief;
+          displayProfile(chiefKey);
+        });
+      });
+
+      // Back button functionality
+      const backBtn = document.querySelector('.back-btn');
+      if (backBtn) {
+        backBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Store current section before navigating back
+          navState.storeCurrentSection('chiefs');
+          
+          // Navigate back with transition
+          window.location.href = this.href;
+        });
+      }
+      
+      // Store current section on page load
+      navState.storeCurrentSection('chiefs');
+    });
+  </script>
+</body>
+</html>

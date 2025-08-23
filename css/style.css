@@ -1,0 +1,267 @@
+@import url('fonts.css');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  line-height: 1.2;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url('../img/Welcomescreen.png') no-repeat center center/cover;
+  object-fit: contain;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'cinzel', sans-serif;
+}
+
+.army-logo {
+  margin: auto;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.welcome-container .logo-content {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-style: 'cinzel';
+  font-weight: 300;
+}
+
+.welcome-container .welcome-heading {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.welcome-container .welcome-description {
+  margin-bottom: 2rem;
+  font-family: 'noto sans' sans-serif;
+}
+
+.personalities-overview {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 80%;
+  margin: 0 auto 2rem auto;
+}
+
+.personality-item {
+  background: rgba(255, 255, 255, .1);
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  padding: 1rem;
+  backdrop-filter: blur(5px);
+  text-align: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.personality-item:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.personality-item h3 {
+  font-family: 'cinzel', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.personality-item p {
+  font-family: 'noto sans', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .personalities-overview {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .personality-item h3 {
+    font-size: 14px;
+  }
+  
+  .personality-item p {
+    font-size: 13px;
+  }
+}
+
+.welcome-container .welcome-btn a{
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: 'cinzel', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 15px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-btn {
+  opacity: 0.85;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(0);
+  position: relative;
+}
+
+.welcome-btn:hover {
+  opacity: 1;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 35px 65px rgba(0, 0, 0, .4);
+}
+
+.welcome-btn:active {
+  transform: translateY(-1px) scale(1.02);
+  transition: all 0.1s ease;
+}
+
+/* Ripple effect on click */
+.welcome-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  z-index: 0;
+}
+
+.welcome-btn:active::before {
+  width: 300px;
+  height: 300px;
+  transition: width 0s, height 0s;
+}
+
+.welcome-btn a {
+  position: relative;
+  z-index: 1;
+}
+
+/* Shimmer effect */
+.welcome-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+  z-index: 0;
+}
+
+.welcome-btn:hover::after {
+  left: 100%;
+}
+
+.welcome-btn i {
+  font-size: 13px;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.welcome-btn:hover i {
+  transform: translateX(5px);
+}
+
+.glass-background {
+  background: rgba(255, 255, 255, .1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, .2);
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-right: 1px solid rgba(255, 255, 255, .2);
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(5px);
+  padding: 10px;
+}
+
+/* Commandant Profile Section */
+.commandant-profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.commandant-main-profile {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  align-items: center;
+}
+
+.commandant-main-profile .profile-image {
+  flex: 0 0 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.commandant-main-profile .profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.commandant-main-profile .profile-bio {
+  flex: 1;
+}
+
+.commandant-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
+}
+
+.commandant-card {
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commandant-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.commandant-card.selected {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
