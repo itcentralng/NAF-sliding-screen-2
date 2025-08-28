@@ -13,8 +13,42 @@ header {
 .navbar-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: flex-start;
+}
+
+.page-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.page-title-section {
+  text-align: center;
+  padding: 25px 40px;
+  border-radius: 15px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.page-title-section h1 {
+  font-family: 'cinzel', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.page-title-section .page-subtitle {
+  font-family: 'cinzel', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
 }
 
 .back-button {
@@ -62,19 +96,25 @@ header {
 
 @media(max-width: 47rem) {
   .navbar {
-    width: 60%;
+    width: 100%;
     padding: 15px 20px;
-    margin-bottom: 1rem;
   }
   
-  .navbar-content {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
+  .page-header {
+    padding: 0 15px;
+    margin-bottom: 15px;
   }
   
-  .navbar-title {
-    text-align: center;
+  .page-title-section {
+    padding: 20px 25px;
+  }
+  
+  .page-title-section h1 {
+    font-size: 24px;
+  }
+  
+  .page-title-section .page-subtitle {
+    font-size: 12px;
   }
   
   .back-btn span {
@@ -90,14 +130,10 @@ header {
   }
 }
 
-@media(max-width: 47rem) {
-  .navbar {
-    width: 60%;
-    padding: 0 20px;
-    margin-bottom: 1rem;
-  }
+.navbar-title {
+  flex-grow: 1;
+  text-align: right;
 }
-
 
 .navbar h2 {
   font-weight: 300;
