@@ -7,13 +7,12 @@
 const SECTION_POSITIONS = {
   'welcome.html': { section: 'home', position: 0 },
   'explore-years.html': { section: 'home', position: 0 },
-  'chiefs-1960s.html': { section: '1960s', position: 1 },
-  'chiefs-1970s.html': { section: '1970s', position: 2 },
-  'chiefs-1980s.html': { section: '1980s', position: 3 },
-  'chiefs-1990s.html': { section: '1990s', position: 4 },
-  'chiefs-2000s.html': { section: '2000s', position: 5 },
-  'chiefs-2010s.html': { section: '2010s', position: 6 },
-  'chiefs-2020s.html': { section: '2020s', position: 7 }
+  'chiefs-1967-1977.html': { section: '1967-1977', position: 1 },
+  'chiefs-1977-1987.html': { section: '1977-1987', position: 2 },
+  'chiefs-1987-1997.html': { section: '1987-1997', position: 3 },
+  'chiefs-1997-2007.html': { section: '1997-2007', position: 4 },
+  'chiefs-2007-2017.html': { section: '2007-2017', position: 5 },
+  'chiefs-2017-2027.html': { section: '2017-2027', position: 6 }
 };
 
 // Navigation state management
@@ -241,20 +240,18 @@ function initializeSlidingNavigation() {
       
       // Determine target section based on href for decades navigation
       let targetSection = 'home';
-      if (href.includes('chiefs-1960s.html')) {
-        targetSection = '1960s';
-      } else if (href.includes('chiefs-1970s.html')) {
-        targetSection = '1970s';
-      } else if (href.includes('chiefs-1980s.html')) {
-        targetSection = '1980s';
-      } else if (href.includes('chiefs-1990s.html')) {
-        targetSection = '1990s';
-      } else if (href.includes('chiefs-2000s.html')) {
-        targetSection = '2000s';
-      } else if (href.includes('chiefs-2010s.html')) {
-        targetSection = '2010s';
-      } else if (href.includes('chiefs-2020s.html')) {
-        targetSection = '2020s';
+      if (href.includes('chiefs-1967-1977.html')) {
+        targetSection = '1967-1977';
+      } else if (href.includes('chiefs-1977-1987.html')) {
+        targetSection = '1977-1987';
+      } else if (href.includes('chiefs-1987-1997.html')) {
+        targetSection = '1987-1997';
+      } else if (href.includes('chiefs-1997-2007.html')) {
+        targetSection = '1997-2007';
+      } else if (href.includes('chiefs-2007-2017.html')) {
+        targetSection = '2007-2017';
+      } else if (href.includes('chiefs-2017-2027.html')) {
+        targetSection = '2017-2027';
       }
       
       // Add click event listener for sliding transition

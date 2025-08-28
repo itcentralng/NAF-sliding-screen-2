@@ -25,52 +25,45 @@
               <p>Return to home to start afresh</p>
             </a>
           </div>
-        <div class="section glass-background decade-60s">
-            <a href="chiefs-1960s.html">
+        <div class="section glass-background decade-67-77">
+            <a href="chiefs-1967-1977.html">
               <img src="img/unsplash_DUCsPrpcNaw.png" alt="">
-              <h2>1963 - 1969</h2>
-              <p>The founding era of the Nigerian Air Force and its first designated chiefs</p>
+              <h2>1967 - 1977</h2>
+              <p>The founding era and post-civil war reconstruction of the Air Force</p>
             </a>
           </div>
-          <div class="section glass-background decade-70s">
-            <a href="chiefs-1970s.html">
+          <div class="section glass-background decade-77-87">
+            <a href="chiefs-1977-1987.html">
               <img src="img/unsplash_gNPb-LuL0SM.png" alt="">
-              <h2>1970 - 1979</h2>
-              <p>Post-civil war reconstruction and modernization of the Air Force</p>
-            </a>
-          </div>
-          <div class="section glass-background decade-80s">
-            <a href="chiefs-1980s.html">
-              <img src="img/unsplash_gNPb-LuL0SM (1).png" alt="">
-              <h2>1980 - 1989</h2>
+              <h2>1977 - 1987</h2>
               <p>Expansion and technological advancement of NAF operations</p>
             </a>
           </div>
-          <div class="section glass-background decade-90s">
-            <a href="chiefs-1990s.html">
-              <img src="img/unsplash_gNPb-LuL0SM (2).png" alt="">
-              <h2>1990 - 1999</h2>
+          <div class="section glass-background decade-87-97">
+            <a href="chiefs-1987-1997.html">
+              <img src="img/unsplash_gNPb-LuL0SM (1).png" alt="">
+              <h2>1987 - 1997</h2>
               <p>Democratic transition and enhanced operational capabilities</p>
             </a>
           </div>
-          <div class="section glass-background decade-2000s">
-            <a href="chiefs-2000s.html">
-              <img src="img/unsplash_gNPb-LuL0SM (3).png" alt="">
-              <h2>2000 - 2009</h2>
+          <div class="section glass-background decade-97-07">
+            <a href="chiefs-1997-2007.html">
+              <img src="img/unsplash_gNPb-LuL0SM (2).png" alt="">
+              <h2>1997 - 2007</h2>
               <p>New millennium challenges and counter-terrorism operations</p>
             </a>
           </div>
-          <div class="section glass-background decade-2010s">
-            <a href="chiefs-2010s.html">
-              <img src="img/unsplash_gNPb-LuL0SM (4).png" alt="">
-              <h2>2010 - 2019</h2>
+          <div class="section glass-background decade-07-17">
+            <a href="chiefs-2007-2017.html">
+              <img src="img/unsplash_gNPb-LuL0SM (3).png" alt="">
+              <h2>2007 - 2017</h2>
               <p>Modern warfare adaptation and regional security operations</p>
             </a>
           </div>
-          <div class="section glass-background decade-2020s">
-            <a href="chiefs-2020s.html">
-              <img src="img/unsplash_1MNnM1TPTRs.png" alt="">
-              <h2>2020 - 2025</h2>
+          <div class="section glass-background decade-17-27">
+            <a href="chiefs-2017-2027.html">
+              <img src="img/unsplash_gNPb-LuL0SM (4).png" alt="">
+              <h2>2017 - 2027</h2>
               <p>Contemporary leadership and future-focused strategic initiatives</p>
             </a>
           </div>
@@ -129,20 +122,18 @@
             let decadeName = '';
             if (section.classList.contains('home')) {
               decadeName = 'home';
-            } else if (section.classList.contains('decade-60s')) {
-              decadeName = '1960s';
-            } else if (section.classList.contains('decade-70s')) {
-              decadeName = '1970s';
-            } else if (section.classList.contains('decade-80s')) {
-              decadeName = '1980s';
-            } else if (section.classList.contains('decade-90s')) {
-              decadeName = '1990s';
-            } else if (section.classList.contains('decade-2000s')) {
-              decadeName = '2000s';
-            } else if (section.classList.contains('decade-2010s')) {
-              decadeName = '2010s';
-            } else if (section.classList.contains('decade-2020s')) {
-              decadeName = '2020s';
+            } else if (section.classList.contains('decade-67-77')) {
+              decadeName = '1967-1977';
+            } else if (section.classList.contains('decade-77-87')) {
+              decadeName = '1977-1987';
+            } else if (section.classList.contains('decade-87-97')) {
+              decadeName = '1987-1997';
+            } else if (section.classList.contains('decade-97-07')) {
+              decadeName = '1997-2007';
+            } else if (section.classList.contains('decade-07-17')) {
+              decadeName = '2007-2017';
+            } else if (section.classList.contains('decade-17-27')) {
+              decadeName = '2017-2027';
             }
             
             // Send decade name to socket

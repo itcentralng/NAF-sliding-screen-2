@@ -14,7 +14,7 @@ body {
 
 .gradient-container {
   position: relative;
-  width: 900%; /* 9 sections * 100% each */
+  width: 800%; /* 8 sections * 100% each */
   height: 100vh;
   display: flex;
   will-change: transform;
@@ -22,7 +22,7 @@ body {
 }
 
 .gradient-section {
-  width: 11.11%; /* Each section takes 11.11% of the container (100% / 9 sections) */
+  width: 12.5%; /* Each section takes 12.5% of the container (100% / 8 sections) */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -36,31 +36,27 @@ body {
   background: url('../img/gradient/start-sliding-2.png') center/cover no-repeat;
 }
 
-.decade-1960s-gradient {
+.decade-1967-1977-gradient {
   background: url('../img/gradient/1967-sliding-2.png') center/cover no-repeat;
 }
 
-.decade-1970s-gradient {
+.decade-1977-1987-gradient {
   background: url('../img/gradient/1977-sliding-2.png') center/cover no-repeat;
 }
 
-.decade-1980s-gradient {
+.decade-1987-1997-gradient {
   background: url('../img/gradient/1987-sliding-2.png') center/cover no-repeat;
 }
 
-.decade-1990s-gradient {
+.decade-1997-2007-gradient {
   background: url('../img/gradient/1997-sliding-2.png') center/cover no-repeat;
 }
 
-.decade-2000s-gradient {
+.decade-2007-2017-gradient {
   background: url('../img/gradient/2007-sliding-2.png') center/cover no-repeat;
 }
 
-.decade-2010s-gradient {
-  background: url('../img/gradient/2017-sliding-2.png') center/cover no-repeat;
-}
-
-.decade-2020s-gradient {
+.decade-2017-2027-gradient {
   background: url('../img/gradient/2017-sliding-2.png') center/cover no-repeat;
 }
 

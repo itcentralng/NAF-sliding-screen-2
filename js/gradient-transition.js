@@ -7,42 +7,38 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const container = document.querySelector('.gradient-container');
   
-  // Section mapping with positions (0=home, 1=1960s, 2=1970s, 3=1980s, 4=1990s, 5=2000s, 6=2010s, 7=2020s, 8=end)
+  // Section mapping with positions (0=home, 1=1967-1977, 2=1977-1987, 3=1987-1997, 4=1997-2007, 5=2007-2017, 6=2017-2027, 7=end)
   const sectionMap = {
     'home': {
       position: 0,
       name: 'Home'
     },
-    '1960s': {
+    '1967-1977': {
       position: 1,
-      name: '1963 - 1969'
+      name: '1967 - 1977'
     },
-    '1970s': {
+    '1977-1987': {
       position: 2,
-      name: '1970 - 1979'
+      name: '1977 - 1987'
     },
-    '1980s': {
+    '1987-1997': {
       position: 3,
-      name: '1980 - 1989'
+      name: '1987 - 1997'
     },
-    '1990s': {
+    '1997-2007': {
       position: 4,
-      name: '1990 - 1999'
+      name: '1997 - 2007'
     },
-    '2000s': {
+    '2007-2017': {
       position: 5,
-      name: '2000 - 2009'
+      name: '2007 - 2017'
     },
-    '2010s': {
+    '2017-2027': {
       position: 6,
-      name: '2010 - 2019'
-    },
-    '2020s': {
-      position: 7,
-      name: '2020 - 2025'
+      name: '2017 - 2027'
     },
     'end': {
-      position: 8,
+      position: 7,
       name: 'End'
     }
   };
@@ -61,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const totalDistance = endPosition - startPosition;
   
   // Calculate animation duration: 7 seconds per section traversed
-  // For example: home to 2020s = 7 sections = 49 seconds
-  // 1960s to 2020s = 6 sections = 42 seconds
+  // For example: home to 2017-2027 = 6 sections = 42 seconds
+  // 1967-1977 to 2017-2027 = 5 sections = 35 seconds
   const sectionsToTraverse = Math.abs(totalDistance);
   const animationDuration = sectionsToTraverse * 7000; // 7 seconds per section
   
@@ -96,8 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   function setContainerPosition(position) {
-    // Each section is 11.11% wide (100% / 9 sections), so we translate by position * -11.11%
-    const translateX = position * -11.11;
+    // Each section is 12.5% wide (100% / 8 sections), so we translate by position * -12.5%
+    const translateX = position * -12.5;
     container.style.transform = `translateX(${translateX}%)`;
   }
   
