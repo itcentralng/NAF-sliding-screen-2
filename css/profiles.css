@@ -205,6 +205,60 @@
   margin-bottom: 15px;
 }
 
+/* Finance Contributions Section */
+.finance-contributions {
+  margin-top: 30px;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  padding-top: 25px;
+}
+
+.finance-contributions h3 {
+  font-family: 'cinzel', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contribution-item {
+  margin-bottom: 25px;
+  padding: 20px;
+  border-left: 4px solid #ffd700;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.contribution-item:last-child {
+  margin-bottom: 0;
+}
+
+.contribution-item h4 {
+  font-family: 'cinzel', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.contribution-period {
+  font-family: 'noto sans', sans-serif;
+  font-size: 14px;
+  color: #ffd700;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.contribution-item p {
+  font-family: 'noto sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: justify;
+  margin: 0;
+}
+
 /* Profiles Page Styles */
 .profiles-section {
   padding: 20px 0;
@@ -376,6 +430,22 @@
     font-size: 14px;
   }
   
+  .finance-contributions h3 {
+    font-size: 20px;
+  }
+  
+  .contribution-item {
+    padding: 15px;
+  }
+  
+  .contribution-item h4 {
+    font-size: 16px;
+  }
+  
+  .contribution-item p {
+    font-size: 14px;
+  }
+  
   .profiles-grid {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -419,6 +489,26 @@
   
   .profile-info {
     padding: 12px;
+  }
+  
+  .finance-contributions h3 {
+    font-size: 18px;
+  }
+  
+  .contribution-item {
+    padding: 12px;
+  }
+  
+  .contribution-item h4 {
+    font-size: 15px;
+  }
+  
+  .contribution-period {
+    font-size: 13px;
+  }
+  
+  .contribution-item p {
+    font-size: 13px;
   }
 }
 

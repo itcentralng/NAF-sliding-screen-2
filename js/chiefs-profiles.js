@@ -64,6 +64,13 @@ const chiefsData = {
       "Brigadier Emmanuel E Ikwue was born on 6 June 1940, in Otukpo, Benue State. He took over command of the NAF on 19 December, 1969. He was faced with the post-civil war reorganisation of the NAF.",
       "In 1969, Brigadier Ikwue was recalled and appointed the fifth Commander of the NAF and member of the Supreme Military and Federal Councils. He was the first officer to be officially designated as the Chief of the Air Staff.",
       "He held this appointment until his retirement in 1975."
+    ],
+    financeContributions: [
+      {
+        title: "Establishment of the NAF Pay and Records Group",
+        period: "April 1972",
+        description: "At inception, the financial administration of the NAF was vested with the Nigerian Army. With the passage of time, the NAF became self-accounting on 1 April 1972 under Brigadier Ikwue's leadership and was headed by a chief paymaster. With broader roles, growing manpower and expanded force structure witnessed in the early 1980s, the NAF Pay and Records was separated thereby giving birth to 2 independent establishments designed as the Pay and Accounting Group and the Personnel Management Group respectively."
+      }
     ]
   },
   yisadoko: {
@@ -104,6 +111,13 @@ const chiefsData = {
       "Air Marshal Ibrahim M Alfa was born on 14 August 1946, at Garkida, Adamawa State. He was appointed the eighth Chief of the Air Staff (CAS) on 1 January, 1984.",
       "During his service, Air Marshal Alfa commanded almost in succession, virtually all Nigerian Air Force (NAF) Commands. It was during his tenure that the NAF military school for girls was opened in Jos.",
       "He was a member of the defunct Armed Forces Ruling Council (AFRC) as well as the Chairman of the National Transition Committee. He retired from the NAF in December 1989."
+    ],
+    financeContributions: [
+      {
+        title: "Computerization of Salary Payment Processes in Pay and Accounting Group",
+        period: "Late 1990s",
+        description: "Prior to computerization, binders were used for computation of salaries and allowances in PAG. This required manual entries, manual computations and manual deductions of charges. A system called ACROL was used to generate and print salary schedules. Air Marshal Alfa's administration leveraged the computer revolution and computerized the salary payment processes in phases. As directed by HQ NAF, PAG subscribed to a programme named dBase III which was first used to process salaries of officers only. Subsequently, more efficient systems were developed leading to the NAF subscribing to a more efficient and flexible software solution called 'Soja Pay'. The system features include payroll processing, reports, summaries and data management."
+      }
     ]
   },
   yussuff: {
@@ -183,6 +197,13 @@ const chiefsData = {
       "Air Marshal Jonah Domfa Wuyep became the fourteenth Chief of the Air Staff (CAS), Nigerian Air Force (NAF) on 24 April, 2001. He was born at Pil-Gani in Langtang North Local Government Area of Plateau State on 23 November, 1948.",
       "He was admitted into the Nigerian Defence Academy in 1970 and was commissioned into the NAF as a Second Lieutenant in April, 1973.",
       "He was appointed as the CAS in April, 2001 and was promoted to the rank of an Air Marshal on 1 October, 2001."
+    ],
+    financeContributions: [
+      {
+        title: "Creation of a new logo for NAF Finance Corps",
+        period: "2003",
+        description: "In an effort towards repositioning and rebranding, a new logo was created for the NAF Finance Corps under Air Marshal Wuyep's leadership. The new logo depicted cowry shells symbolizing the medium of exchange widely used in African and some Asian countries."
+      }
     ]
   },
   dike: {
@@ -209,6 +230,13 @@ const chiefsData = {
       "Air Chief Marshal Oluseyi Petinrin was born on 19 January, 1955 at Ipetu-Ijesa in Ori-Ade Local Government Area of Osun State.",
       "Air Marshal Petinrin enlisted into the Nigerian Defence Academy (NDA) in 1974 as a member of Regular Course 16 and was commissioned Pilot Officer on 3 January, 1977.",
       "He was the Nigerian Air Force's Chief of the Air Staff from 2008 to 2010. He was appointed Chief of the Defence Staff and served from 2010 to 2012."
+    ],
+    financeContributions: [
+      {
+        title: "Introduction of Staff Grant",
+        period: "2009 - 2010",
+        description: "In 2009, Air Cdre AA Malomo sought the approval of Air Marshal OO Petinrin to introduce a monthly staff grant for AVMs in the NAF. The laudable initiative was to provide AVMs with resources to encourage and empower them to effectively carry out the taskings of the respective strategic roles they played towards actualization of NAF objectives. The impact the grant had on welfare of NAF senior officers led the Army and Navy to adopt the same initiative. Subsequently, the grant was standardized, approved and gazetted in the MAFA among other non-regular allowances paid to personnel of the 3 services."
+      }
     ]
   },
   umar: {
@@ -222,6 +250,13 @@ const chiefsData = {
       "Air Marshal MD Umar was born on 20 June, 1955 in Kano Municipal Local Government Area of Kano State. He was enlisted into the Nigerian Air Force (NAF) in July, 1976 as a member of Short Service Course 12.",
       "Prior to his appointment on 19 September, 2010 as the Chief of the Air Staff (CAS), he was the Air Officer Commanding Training Command (AOC TC).",
       "He was the 17th Chief of the Air Staff who served from 19 September, 2010 to 3 October, 2012."
+    ],
+    financeContributions: [
+      {
+        title: "Justification and Allocation of funds for Accounting Machines and Manuals in Unit Overhead Allocations",
+        period: "2010 - 2012",
+        description: "Pay officers serving in pay offices in NAF units and command HQs are shouldered with the responsibility of periodic rendition of returns for all public funds expended. The rendition of returns required printing of government special accounting forms such as AB57, G.1033 and P.1922 among others. Prior to 2008, special provisions were not made to print the forms, thereby hindering the ability of the pay officers and supervisors to carryout their statutory duties. Under Air Marshal Umar's leadership, the CAB approved the allocation of funds to all pay offices for provision of accounting forms, manuals and servicing of critical machines as well as appliances."
+      }
     ]
   },
   badeh: {
@@ -235,6 +270,13 @@ const chiefsData = {
       "Air Chief Marshal Alex Sabundu Badeh was born on 7 November, 1957 in Vimtim, a little town in Mubi Local Government Area of Adamawa State.",
       "He was admitted into the Nigerian Defence Academy as a member of 21 Regular Course on 3 January, 1977 and was commissioned a Pilot Officer on 3 July, 1979.",
       "Air Chief Marshal Badeh was the 18th Chief of the Air Staff (CAS) and the 15th Chief of Defence Staff (CDS)."
+    ],
+    financeContributions: [
+      {
+        title: "Creation of the Office of the Deputy Director of Strategic Financial Plans",
+        period: "2012 - 2014",
+        description: "Under Air Chief Marshal Badeh's leadership, the Deputy Director of Strategic Financial Plans was created under the Policy and Plans Branch to enhance strategic financial planning capabilities within the Nigerian Air Force."
+      }
     ]
   },
   amosu: {
@@ -248,6 +290,18 @@ const chiefsData = {
       "Air Marshal Adesola Nunayon Amosu was born on 1 August, 1958 in Badagry, Lagos State, Nigeria. He was enlisted into the Nigerian Air Force (NAF) through the Nigerian Defence Academy as a member of 25 Regular Course on 3 January, 1979.",
       "He was commissioned as a Pilot Officer on 3 July, 1981. Prior to his appointment on 16 January, 2014 as the Chief of Air Staff (CAS), he was the Director of Operations and Air Officer Commanding Tactical Air Command (AOC TAC).",
       "He was the 19th Chief of Air Staff who served from 2014 to 2015."
+    ],
+    financeContributions: [
+      {
+        title: "Establishment of NAFSFA in Badagry",
+        period: "August 2014",
+        description: "In order to provide finance personnel with requisite knowledge to effectively carryout their roles and responsibilities, the Nigerian Air Force School of Finance and Accounts was established in Badagry under Air Marshal Amosu's leadership. Finance clerks attended the finance upgrading courses while newly commissioned finance officers attended the Basic Finance Officers' Course. The primary learning objectives were to among others, prepare pay clerks and finance officers to carryout their roles in accordance with unit pay procedures, understand and appreciate the rudiments of audit exercises, taxation and financial accounting and management."
+      },
+      {
+        title: "Upgrade of Directorate of Finance and Accounts to Accounts and Budget Branch",
+        period: "July 2014",
+        description: "Due to its growing roles and responsibilities, there was a call for the Directorate of Finance and Accounts to be upgraded to a Branch. Also, the growing number of finance personnel and their specialization in various accounting fields justified the call for the upgrade. In July 2014, Air Marshal Amosu authorized the highly anticipated status upgrade from a Directorate to the Accounts and Budget Branch. The upgrade came with the promotion of the first AVM in the Finance Specialty and appointment of a Chief of Accounts and Budget."
+      }
     ]
   },
   abubakar: {
@@ -261,6 +315,33 @@ const chiefsData = {
       "Air Marshal Sadique Baba Abubakar was born on 8 April 1960 at Azare in Bauchi State, Nigeria. He joined the Nigerian Air Force as a member of the Cadet Military Training Course (CMTC 5) in November 1979 and was commissioned pilot officer on 15 May 1982.",
       "He progressed steadily through the ranks and was promoted to the rank of Air Marshal on 13 August 15.",
       "He was the 20th Chief of Air Staff who served from 2015 to 26th January 2021."
+    ],
+    financeContributions: [
+      {
+        title: "Development and publication of training manuals for finance personnel",
+        period: "2015 - 2021",
+        description: "A team of experienced finance officers and clerks were tasked to draft and produce training manuals under Air Marshal Abubakar's leadership. The manuals serve as educational guides to enable finance officers study for the specialist subject during the officers' promotion exams. The manuals also helped clerks adequately prepare for their accounts upgrading courses. These manuals have served as good study materials for the development of finance personnel in the NAF."
+      },
+      {
+        title: "Change of Nomenclature from PAG to 081 PAG",
+        period: "2015 - 2021",
+        description: "The NAF leadership embarked on a service-wide restructuring of establishments which saw the change of nomenclature of Pay and Accounting Group (PAG) to 081 PAG under Air Marshal Abubakar's administration."
+      },
+      {
+        title: "Re-designation of the Office of the NAF Cashier to Commanding Officer Treasury Wing at 081 PAG",
+        period: "2018",
+        description: "In line with the Federal Government Financial Reforms, the erstwhile Office of the NAF Cashier was re-designated to CO Treasury Wing. The change was in compliance with Federal Government financial policy under Air Marshal Abubakar's leadership."
+      },
+      {
+        title: "Integration of NAF salaries with IPPIS platform",
+        period: "2018",
+        description: "In order to enhance accountability and streamline Federal Government salary payment processes, the NAF integrated the payroll of its personnel into the IPPIS platform. Though it came with a lot of administrative challenges, the A&B Branch ensured constant liaison to ensure strict compliance and operationalization under Air Marshal Abubakar's administration."
+      },
+      {
+        title: "Adoption of FGN GIFMIS system for revenue collection and disbursement",
+        period: "2018",
+        description: "In compliance with the Federal Government directive, the A&B Branch adopted the GIFMIS which is a web-based platform designed to streamline and automate government financial transactions in Nigeria. The platform allowed access to finance personnel in the A&B Branch to upload and track payments to the NAF in real-time. The system supported the FGN Treasury Single Account policy. This has overtime proven to enhance efficiency of financial operations under Air Marshal Abubakar's leadership."
+      }
     ]
   },
   amao: {
@@ -277,6 +358,23 @@ const chiefsData = {
       "Notable in his operational experiences are his participation in the draw-down of the Africa-led International Support Mission to Mali (AFISMA), as well as the counter-insurgency Operations ZAMAN LAFIYA and LAFIA DOLE in the North East of Nigeria.",
       "Air Marshal Oladayo Amao is decorated, amongst others, with the Forces Service Star, Meritorious Service Star, Distinguished Service Star and General Service Star, in addition to the General Service Medal and the River Benue Star, which were awarded for his service in various military campaigns.",
       "He was the 21st Chief of Air Staff who served from 29th January 2021 to 22nd June 2023."
+    ],
+    financeContributions: [
+      {
+        title: "Designation of Ibadan as permanent site for NAFSFA",
+        period: "2021",
+        description: "As a coastal town and its low-lying terrain, Badagry experienced annual flooding as a result of constant rainfall. This led to waterlogging of NAFSFA academic area and students' hostel. The situation gave rise to concerns of health, flooding and transportation challenges. This forced the School to constantly alter its academic calendar which occasionally had an effect on the promotion of finance clerks. In view of the environmental challenges, Ibadan was designated as the permanent site of NAFSFA under Air Marshal Amao's leadership."
+      },
+      {
+        title: "Conceptualization and construction of building for NAFSFA in Ibadan",
+        period: "2023 - 2025",
+        description: "In order to meet the specific needs and ensure optimum utilization of space and enhanced efficiency, a building design was conceptualized and developed for NAFSFA in Ibadan under Air Marshal Amao's leadership. The building design was carefully developed to capture all the special needs of a standard academic institution."
+      },
+      {
+        title: "Establishment of the NAF Microfinance Bank",
+        period: "2021 - 2024",
+        description: "In 2021, the idea to establish a microfinance bank for the NAF was conceived during Air Marshal Amao's tenure. A committee was constituted which led to registrations with CBN and development of a feasibility study for the microfinance bank. The NAF Microfinance Bank was established to primarily avail NAF personnel and their dependents an alternative of specially tailored banking services. Similarly, an objective of the NAF Microfinance Bank was to offer personnel opportunity to enjoy products specially developed to cater to their welfare needs."
+      }
     ]
   }
 };
@@ -314,6 +412,18 @@ function showProfile(chiefId) {
     <div class="profile-biography">
       ${chief.biography.map(paragraph => `<p>${paragraph}</p>`).join('')}
     </div>
+    ${chief.financeContributions ? `
+    <div class="finance-contributions">
+      <h3>Contributions to NAF Finance Specialty</h3>
+      ${chief.financeContributions.map(contribution => `
+        <div class="contribution-item">
+          <h4>${contribution.title}</h4>
+          <div class="contribution-period">${contribution.period}</div>
+          <p>${contribution.description}</p>
+        </div>
+      `).join('')}
+    </div>
+    ` : ''}
   `;
   
   content.innerHTML = profileHTML;
