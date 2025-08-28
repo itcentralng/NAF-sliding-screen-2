@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const container = document.querySelector('.gradient-container');
   
-  // Section mapping with positions (0=home, 1=1960s, 2=1970s, 3=1980s, 4=1990s, 5=2000s, 6=2010s, 7=2020s)
+  // Section mapping with positions (0=home, 1=1960s, 2=1970s, 3=1980s, 4=1990s, 5=2000s, 6=2010s, 7=2020s, 8=end)
   const sectionMap = {
     'home': {
       position: 0,
@@ -40,6 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
     '2020s': {
       position: 7,
       name: '2020 - 2025'
+    },
+    'end': {
+      position: 8,
+      name: 'End'
     }
   };
   
@@ -92,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   function setContainerPosition(position) {
-    // Each section is 12.5% wide (100% / 8 sections), so we translate by position * -12.5%
-    const translateX = position * -12.5;
+    // Each section is 11.11% wide (100% / 9 sections), so we translate by position * -11.11%
+    const translateX = position * -11.11;
     container.style.transform = `translateX(${translateX}%)`;
   }
   

@@ -14,7 +14,7 @@ body {
 
 .gradient-container {
   position: relative;
-  width: 800%; /* 8 sections * 100% each */
+  width: 900%; /* 9 sections * 100% each */
   height: 100vh;
   display: flex;
   will-change: transform;
@@ -22,7 +22,7 @@ body {
 }
 
 .gradient-section {
-  width: 12.5%; /* Each section takes 12.5% of the container (100% / 8 sections) */
+  width: 11.11%; /* Each section takes 11.11% of the container (100% / 9 sections) */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -31,37 +31,41 @@ body {
   flex-shrink: 0;
 }
 
-/* Individual gradient backgrounds for each decade */
+/* Individual background images for each decade */
 .home-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: url('../img/gradient/start-sliding-2.png') center/cover no-repeat;
 }
 
 .decade-1960s-gradient {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: url('../img/gradient/1967-sliding-2.png') center/cover no-repeat;
 }
 
 .decade-1970s-gradient {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: url('../img/gradient/1977-sliding-2.png') center/cover no-repeat;
 }
 
 .decade-1980s-gradient {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  background: url('../img/gradient/1987-sliding-2.png') center/cover no-repeat;
 }
 
 .decade-1990s-gradient {
-  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  background: url('../img/gradient/1997-sliding-2.png') center/cover no-repeat;
 }
 
 .decade-2000s-gradient {
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  background: url('../img/gradient/2007-sliding-2.png') center/cover no-repeat;
 }
 
 .decade-2010s-gradient {
-  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  background: url('../img/gradient/2017-sliding-2.png') center/cover no-repeat;
 }
 
 .decade-2020s-gradient {
-  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  background: url('../img/gradient/2017-sliding-2.png') center/cover no-repeat;
+}
+
+.end-gradient {
+  background: url('../img/gradient/end-sliding-2.png') center/cover no-repeat;
 }
 
 
