@@ -56,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const endPosition = targetSectionData.position;
   const totalDistance = endPosition - startPosition;
   
-  // Calculate animation duration: 7 seconds per section traversed
-  // For example: home to 2017-2027 = 6 sections = 42 seconds
-  // 1967-1977 to 2017-2027 = 5 sections = 35 seconds
+  // Calculate animation duration: 3 seconds per section traversed
+  // For example: home to 2017-2027 = 6 sections = 18 seconds
+  // 1967-1977 to 2017-2027 = 5 sections = 15 seconds
   const sectionsToTraverse = Math.abs(totalDistance);
-  const animationDuration = sectionsToTraverse * 7000; // 7 seconds per section
+  const animationDuration = sectionsToTraverse * 3000; // 3 seconds per section
   
   // Disable CSS transitions for manual control
   container.style.transition = 'none';
