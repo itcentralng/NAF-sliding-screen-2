@@ -1,4 +1,5 @@
 import os
+import threading
 import time
 from flask import Flask
 from flask_socketio import SocketIO, emit
@@ -74,12 +75,8 @@ def handle_disconnect():
 
 
 if __name__ == "__main__":
-    try:
-        # Start the Flask app with WebSocket support
-        socketio.run(app, host="0.0.0.0", port=5550, debug=True)
-    except KeyboardInterrupt:
-        print("Shutting down...")
-    finally:
-        if arduino.is_open:
-            arduino.close()
-            print("Arduino connection closed")
+    serial_thread = threading.Thread(target=send_to_arduino)
+    serial_thread.daemon = True
+    serial_thread.start()
+    # Start the Flask app with WebSocket support
+    socketio.run(app, host="0.0.0.0", port=5550)
