@@ -1,10 +1,8 @@
-import re
 import os
 import time
-from flask import Flask, render_template
+from flask import Flask
 from flask_socketio import SocketIO, emit
 import serial
-import threading
 
 import dotenv
 
@@ -16,7 +14,7 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Configure the serial connection
 arduino = serial.Serial(port=os.getenv("BOARD_ID"), baudrate=9600, timeout=1)
-time.sleep(2)  # Wait for connection to establish
+time.sleep(5)  # Wait for connection to establish
 
 
 def send_to_arduino(text_to_send):
@@ -73,11 +71,6 @@ def handle_connect():
 def handle_disconnect():
     """Handle client disconnection"""
     print('Client disconnected')
-
-
-@app.route("/")
-def main():
-    return render_template("welcome.html")
 
 
 if __name__ == "__main__":
