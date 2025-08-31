@@ -15,7 +15,7 @@ app.config["SECRET_KEY"] = "secret!"
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Configure the serial connection
-arduino = serial.Serial(os.getenv("BOARD_ID"), 9600, timeout=1)
+arduino = serial.Serial(port=os.getenv("BOARD_ID"), baudrate=9600, timeout=1)
 time.sleep(2)  # Wait for connection to establish
 
 
