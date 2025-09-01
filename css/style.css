@@ -9,9 +9,32 @@
   scroll-behavior: smooth;
 }
 
+html, body {
+  height: 100%;
+  min-height: 100vh;
+}
+
 body {
-  background: url('../img/Welcomescreen.png') no-repeat center center/cover;
+  background: url('../img/Welcomescreen.png') no-repeat center center fixed;
+  background-size: cover;
   object-fit: contain;
+}
+
+/* Ensure background covers in portrait mode */
+@media (orientation: portrait) {
+  body {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+/* Additional media query for mobile devices */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* Fixed backgrounds can cause issues on mobile */
+    background-size: cover;
+  }
 }
 
 h1, h2 {
@@ -31,6 +54,39 @@ h1, h2 {
   align-items: center;
   text-align: center;
   color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Mobile portrait adjustments */
+@media (max-width: 768px) and (orientation: portrait) {
+  .welcome-container {
+    min-height: 100vh;
+    justify-content: space-evenly;
+    padding: 40px 20px;
+  }
+  
+  .welcome-container .army-logo img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .welcome-container .logo-content {
+    width: 90%;
+    font-size: 16px;
+  }
+  
+  .welcome-container .welcome-heading {
+    width: 90%;
+    font-size: 24px;
+  }
+  
+  .welcome-container .welcome-description {
+    width: 90%;
+    margin: 0 auto 2rem auto;
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }
 
 .welcome-container .logo-content {
