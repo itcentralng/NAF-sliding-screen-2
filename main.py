@@ -1,8 +1,7 @@
-import re
 import os
 import time
 import platform
-from flask import Flask, render_template
+from flask import Flask
 from flask_socketio import SocketIO, emit
 import serial
 
@@ -153,11 +152,6 @@ def handle_status_check():
 def handle_disconnect():
     """Handle client disconnection"""
     print('Client disconnected')
-
-
-@app.route("/")
-def main():
-    return render_template("welcome.html")
 
 
 if __name__ == "__main__":
