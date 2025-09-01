@@ -1,7 +1,7 @@
 
 /* Chiefs Gallery Styles */
 .chiefs-gallery {
-  padding: 40px 20px;
+  padding: 60px 20px 40px;
   min-height: calc(100vh - 120px);
 }
 
@@ -385,6 +385,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .chiefs-gallery {
+    padding: 50px 15px 30px;
+  }
+  
   .chiefs-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -465,6 +469,10 @@
 }
 
 @media (max-width: 480px) {
+  .chiefs-gallery {
+    padding: 40px 10px 30px;
+  }
+  
   .chiefs-grid {
     grid-template-columns: 1fr;
   }
