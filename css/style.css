@@ -15,9 +15,10 @@ html, body {
 }
 
 body {
-  background: url('../img/Welcomescreen.png') no-repeat center center fixed;
+  background: url('../img/Welcomescreen.png') no-repeat center center;
   background-size: cover;
-  object-fit: contain;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 /* Ensure background covers in portrait mode */
@@ -26,6 +27,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
+    min-height: 100vh;
+    min-height: 100dvh; /* Use dynamic viewport height for better mobile support */
   }
 }
 
@@ -34,6 +37,21 @@ body {
   body {
     background-attachment: scroll; /* Fixed backgrounds can cause issues on mobile */
     background-size: cover;
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height */
+  }
+}
+
+/* Specific portrait mobile optimization */
+@media (max-width: 768px) and (orientation: portrait) {
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* Ensure the image covers the full height even on mobile browsers with dynamic toolbars */
+    background-repeat: no-repeat;
   }
 }
 
