@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // For example: home to 2017-2027 = 6 sections = 18 seconds
   // 1967-1977 to 2017-2027 = 5 sections = 15 seconds
   const sectionsToTraverse = Math.abs(totalDistance);
-  const animationDuration = sectionsToTraverse * 3000; // 3 seconds per section
+  const animationDuration = sectionsToTraverse * 6000; // 3 seconds per section
   
   // Disable CSS transitions for manual control
   container.style.transition = 'none';
