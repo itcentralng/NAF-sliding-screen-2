@@ -9,12 +9,21 @@
 #define LIMIT_SWITCH_PIN 7  // Connect your limit switch to pin 7
 
 // Motor parameters
-int stepDelay = 1000; // microseconds between steps (adjust for speed)
+int stepDelay = 2000; // microseconds between steps (adjust for speed)
 
 // Position array and motor control variables
 String positions[7] = {"home", "1967-1977", "1977-1987", "1987-1997", "1997-2007", "2007-2017", "2017-2027"};
-const int MAX_STEPS = 9000; // Total steps from index 0 to index 6
-const int STEPS_PER_INDEX = MAX_STEPS / 6; // Steps between each index (15000/6 = 2500)
+
+// Position distances in steps from home position
+const int positionSteps[7] = {
+    0,     // home
+    1333,  // 1967-1977: 1333 steps from home
+    2833,  // 1977-1987: 1333 + 1500 = 2833 steps from home
+    4333,  // 1987-1997: 2833 + 1500 = 4333 steps from home
+    5833,  // 1997-2007: 4333 + 1500 = 5833 steps from home
+    7333,  // 2007-2017: 5833 + 1500 = 7333 steps from home
+    8833   // 2017-2027: 7333 + 1500 = 8833 steps from home
+};
 
 int currentPosition = -1; // Current motor position index (-1 means unknown)
 bool isCalibrated = false; // Flag to track if motor has been calibrated to start position
@@ -78,7 +87,7 @@ void calibrateToHome() {
     Serial.println("Calibrating: Moving left to limit switch...");
     
     // Move left until limit switch is hit
-    digitalWrite(DIR_PIN, HIGH); // Left direction
+    digitalWrite(DIR_PIN, LOW); // Left direction
     
     while (digitalRead(LIMIT_SWITCH_PIN) == HIGH) {
         digitalWrite(STEP_PIN, HIGH);
@@ -90,7 +99,7 @@ void calibrateToHome() {
     Serial.println("Limit switch triggered! Moving 100 steps right to clear switch...");
     
     // Move 100 steps right to clear the limit switch
-    digitalWrite(DIR_PIN, LOW); // Right direction
+    digitalWrite(DIR_PIN, HIGH); // Right direction
     for (int i = 0; i < 100; i++) {
         digitalWrite(STEP_PIN, HIGH);
         delayMicroseconds(stepDelay);
@@ -109,8 +118,10 @@ void moveToPosition(int targetIndex) {
         return;
     }
     
-    int stepsToMove = abs(targetIndex - currentPosition) * STEPS_PER_INDEX;
-    bool moveRight = targetIndex > currentPosition;
+    int currentSteps = positionSteps[currentPosition];
+    int targetSteps = positionSteps[targetIndex];
+    int stepsToMove = abs(targetSteps - currentSteps);
+    bool moveRight = targetSteps > currentSteps;
     
     Serial.println("Moving from position '" + positions[currentPosition] + "' (index " + String(currentPosition) + 
                   ") to '" + positions[targetIndex] + "' (index " + String(targetIndex) + ")");
@@ -124,7 +135,7 @@ void moveToPosition(int targetIndex) {
 
 void moveMotor(bool clockwise, int steps) {
     // Set direction
-    digitalWrite(DIR_PIN, clockwise ? LOW : HIGH);
+    digitalWrite(DIR_PIN, clockwise ? HIGH : LOW);
 
     // Step the motor
     for (int i = 0; i < steps; i++) {
@@ -137,7 +148,7 @@ void moveMotor(bool clockwise, int steps) {
             
             // Move 100 steps in the opposite direction to clear the switch
             Serial.println("Moving 100 steps right to clear switch...");
-            digitalWrite(DIR_PIN, LOW); // Always move right when clearing limit switch
+            digitalWrite(DIR_PIN, HIGH); // Always move right when clearing limit switch
             for (int j = 0; j < 100; j++) {
                 digitalWrite(STEP_PIN, HIGH);
                 delayMicroseconds(stepDelay);
