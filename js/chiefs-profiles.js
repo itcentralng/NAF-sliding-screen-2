@@ -3,7 +3,7 @@ const chiefsData = {
   kahtz: {
     name: "Colonel Gerhard Kahtz",
     period: "1963 - 1965",
-    position: "1st Chief of Air Staff",
+    position: "1st Chief of the Air Staff",
     birthDate: "26 November 1922",
     birthPlace: "Durlach, Germany",
     image: "img/chiefs/image1.png",
@@ -16,7 +16,7 @@ const chiefsData = {
   timming: {
     name: "Colonel W Timming",
     period: "1965 - 1966",
-    position: "2nd Chief of Air Staff",
+    position: "2nd Chief of the Air Staff",
     birthDate: "4 October 1912",
     birthPlace: "Germany",
     image: "img/chiefs/image2.png",
@@ -29,7 +29,7 @@ const chiefsData = {
   kurubo: {
     name: "Brigadier Kurubo",
     period: "1966 - 1967",
-    position: "3rd Chief of Air Staff",
+    position: "3rd Chief of the Air Staff",
     birthDate: "27 July 1934",
     birthPlace: "Bonny, Rivers State",
     image: "img/chiefs/image3.jpg",
@@ -42,7 +42,7 @@ const chiefsData = {
   alao: {
     name: "Colonel Shittu A Alao",
     period: "1967 - 1969",
-    position: "4th Chief of Air Staff",
+    position: "4th Chief of the Air Staff",
     birthDate: "Unknown",
     birthPlace: "Dorowa Babuje, Plateau State",
     image: "img/chiefs/image4.png",
@@ -56,7 +56,7 @@ const chiefsData = {
   ikwue: {
     name: "Brigadier Emmanuel E Ikwue",
     period: "1969 - 1975",
-    position: "5th Chief of Air Staff",
+    position: "5th Chief of the Air Staff",
     birthDate: "6 June 1940",
     birthPlace: "Otukpo, Benue State",
     image: "img/chiefs/image5.png",
@@ -76,7 +76,7 @@ const chiefsData = {
   yisadoko: {
     name: "Air Vice Marshal John Nmadu Yisa-Doko",
     period: "1975 - 1980",
-    position: "6th Chief of Air Staff",
+    position: "6th Chief of the Air Staff",
     birthDate: "Unknown",
     birthPlace: "Nigeria",
     image: "img/chiefs/image6.png",
@@ -90,7 +90,7 @@ const chiefsData = {
   bello: {
     name: "Air Vice-Marshal Abdullahi Dominic Bello",
     period: "1980 - 1984",
-    position: "7th Chief of Air Staff",
+    position: "7th Chief of the Air Staff",
     birthDate: "14 December 1942",
     birthPlace: "Jimeta, Yola",
     image: "img/chiefs/image7.jpg",
@@ -103,7 +103,7 @@ const chiefsData = {
   alfa: {
     name: "Air Marshal Ibrahim M Alfa",
     period: "1984 - 1989",
-    position: "8th Chief of Air Staff",
+    position: "8th Chief of the Air Staff",
     birthDate: "14 August 1946",
     birthPlace: "Garkida, Adamawa State",
     image: "img/chiefs/image8.png",
@@ -123,7 +123,7 @@ const chiefsData = {
   yussuff: {
     name: "Air Marshal Nuraini Oladimeji Omotosho Yussuff",
     period: "1989 - 1992",
-    position: "9th Chief of Air Staff",
+    position: "9th Chief of the Air Staff",
     birthDate: "10 June 1942",
     birthPlace: "Lagos",
     image: "img/chiefs/image9.jpg",
@@ -136,7 +136,7 @@ const chiefsData = {
   dada: {
     name: "Air Marshal Akin Dada",
     period: "1992 - 1993",
-    position: "10th Chief of Air Staff",
+    position: "10th Chief of the Air Staff",
     birthDate: "7 June 1943",
     birthPlace: "Lagos (from Ipoti-Ekiti)",
     image: "img/chiefs/image10.jpg",
@@ -149,20 +149,20 @@ const chiefsData = {
   femi: {
     name: "Air Vice Marshal Femi John Femi",
     period: "1993 - 1996",
-    position: "11th Chief of Air Staff",
+    position: "11th Chief of the Air Staff",
     birthDate: "30 December 1945",
     birthPlace: "Egbeda-Kabba, Kogi State",
     image: "img/chiefs/image11.png",
     biography: [
       "The Eleventh Chief of the Air Staff of the Nigerian Air Force (NAF), Air Vice Marshal Femi John Femi, was born on 30 December 1945 in Egbeda-Kabba, Kogi State. He enlisted into the NAF as an officer cadet on 1 July, 1965.",
       "He proceeded to Germany for his pilot training after his basic military training. He qualified as an helicopter pilot in March, 1967 and was commissioned Second Lieutenant on his return to Nigeria on 1 June 1967.",
-      "He was appointed Chief of Air Staff (CAS) of the NAF on 17 September, 1993. He retired from military service in 1996."
+      "He was appointed Chief of the Air Staff (CAS) of the NAF on 17 September, 1993. He retired from military service in 1996."
     ]
   },
   eduok: {
     name: "Air Marshal Nsikak-Abasi Essien Eduok",
     period: "1996 - 1999",
-    position: "12th Chief of Air Staff",
+    position: "12th Chief of the Air Staff",
     birthDate: "11 July 1947",
     birthPlace: "Mbak, Akwa Ibom State",
     image: "img/chiefs/image12.jpg",
@@ -176,7 +176,7 @@ const chiefsData = {
   alfaisaac: {
     name: "Air Marshal Isaac Mohammed Alfa",
     period: "1999 - 2001",
-    position: "13th Chief of Air Staff",
+    position: "13th Chief of the Air Staff",
     birthDate: "15 September 1950",
     birthPlace: "Inye, Ankpa LGA, Kogi State",
     image: "img/chiefs/image13.png",
@@ -189,7 +189,7 @@ const chiefsData = {
   wuyep: {
     name: "Air Marshal Jonah Domfa Wuyep",
     period: "2001 - 2006",
-    position: "14th Chief of Air Staff",
+    position: "14th Chief of the Air Staff",
     birthDate: "23 November 1948",
     birthPlace: "Pil-Gani, Langtang North LGA, Plateau State",
     image: "img/chiefs/image14.png",
@@ -209,7 +209,7 @@ const chiefsData = {
   dike: {
     name: "Air Chief Marshal Paul Dike",
     period: "2006 - 2008",
-    position: "15th Chief of Air Staff",
+    position: "15th Chief of the Air Staff",
     birthDate: "Unknown",
     birthPlace: "Issele-Uku, Aniocha North LGA, Delta State",
     image: "img/chiefs/image15.png",
@@ -222,7 +222,7 @@ const chiefsData = {
   petinrin: {
     name: "Air Chief Marshal Oluseyi Petinrin",
     period: "2008 - 2010",
-    position: "16th Chief of Air Staff",
+    position: "16th Chief of the Air Staff",
     birthDate: "19 January 1955",
     birthPlace: "Ipetu-Ijesa, Ori-Ade LGA, Osun State",
     image: "img/chiefs/image16.png",
@@ -242,7 +242,7 @@ const chiefsData = {
   umar: {
     name: "Air Marshal MD Umar",
     period: "2010 - 2012",
-    position: "17th Chief of Air Staff",
+    position: "17th Chief of the Air Staff",
     birthDate: "20 June 1955",
     birthPlace: "Kano Municipal LGA, Kano State",
     image: "img/chiefs/image17.png",
@@ -262,7 +262,7 @@ const chiefsData = {
   badeh: {
     name: "Air Chief Marshal Alex Sabundu Badeh",
     period: "2012 - 2014",
-    position: "18th Chief of Air Staff",
+    position: "18th Chief of the Air Staff",
     birthDate: "7 November 1957",
     birthPlace: "Vimtim, Mubi LGA, Adamawa State",
     image: "img/chiefs/image18.png",
@@ -282,14 +282,14 @@ const chiefsData = {
   amosu: {
     name: "Air Marshal Adesola Nunayon Amosu",
     period: "2014 - 2015",
-    position: "19th Chief of Air Staff",
+    position: "19th Chief of the Air Staff",
     birthDate: "1 August 1958",
     birthPlace: "Badagry, Lagos State",
     image: "img/chiefs/image19.png",
     biography: [
       "Air Marshal Adesola Nunayon Amosu was born on 1 August, 1958 in Badagry, Lagos State, Nigeria. He was enlisted into the Nigerian Air Force (NAF) through the Nigerian Defence Academy as a member of 25 Regular Course on 3 January, 1979.",
-      "He was commissioned as a Pilot Officer on 3 July, 1981. Prior to his appointment on 16 January, 2014 as the Chief of Air Staff (CAS), he was the Director of Operations and Air Officer Commanding Tactical Air Command (AOC TAC).",
-      "He was the 19th Chief of Air Staff who served from 2014 to 2015."
+      "He was commissioned as a Pilot Officer on 3 July, 1981. Prior to his appointment on 16 January, 2014 as the Chief of the Air Staff (CAS), he was the Director of Operations and Air Officer Commanding Tactical Air Command (AOC TAC).",
+      "He was the 19th Chief of the Air Staff who served from 2014 to 2015."
     ],
     financeContributions: [
       {
@@ -307,14 +307,14 @@ const chiefsData = {
   abubakar: {
     name: "Air Marshal Sadique Baba Abubakar",
     period: "2015 - 2021",
-    position: "20th Chief of Air Staff",
+    position: "20th Chief of the Air Staff",
     birthDate: "8 April 1960",
     birthPlace: "Azare, Bauchi State",
     image: "img/chiefs/image20.png",
     biography: [
       "Air Marshal Sadique Baba Abubakar was born on 8 April 1960 at Azare in Bauchi State, Nigeria. He joined the Nigerian Air Force as a member of the Cadet Military Training Course (CMTC 5) in November 1979 and was commissioned pilot officer on 15 May 1982.",
       "He progressed steadily through the ranks and was promoted to the rank of Air Marshal on 13 August 15.",
-      "He was the 20th Chief of Air Staff who served from 2015 to 26th January 2021."
+      "He was the 20th Chief of the Air Staff who served from 2015 to 26th January 2021."
     ],
     financeContributions: [
       {
@@ -347,7 +347,7 @@ const chiefsData = {
   amao: {
     name: "Air Marshal Isiaka Oladayo Amao",
     period: "2021 - 2023",
-    position: "21st Chief of Air Staff",
+    position: "21st Chief of the Air Staff",
     birthDate: "14 September 1965",
     birthPlace: "Enugu (from Oshogbo LGA, Osun State)",
     image: "img/chiefs/image21.png",
@@ -357,7 +357,7 @@ const chiefsData = {
       "Operationally, as a seasoned Fighter Instructor Pilot on the Alpha Jet, Air Marshal Amao served as a Squadron Pilot at the 99 (now 407) Air Combat Training Group Kainji. He subsequently worked as an Instructor Pilot at both the 301 (now 401) Flying Training School Kaduna and the 303 (now 403) Flying Training School Kano, with over 1,500 Jet and Instructional Hours to his credit.",
       "Notable in his operational experiences are his participation in the draw-down of the Africa-led International Support Mission to Mali (AFISMA), as well as the counter-insurgency Operations ZAMAN LAFIYA and LAFIA DOLE in the North East of Nigeria.",
       "Air Marshal Oladayo Amao is decorated, amongst others, with the Forces Service Star, Meritorious Service Star, Distinguished Service Star and General Service Star, in addition to the General Service Medal and the River Benue Star, which were awarded for his service in various military campaigns.",
-      "He was the 21st Chief of Air Staff who served from 29th January 2021 to 22nd June 2023."
+      "He was the 21st Chief of the Air Staff who served from 29th January 2021 to 22nd June 2023."
     ],
     financeContributions: [
       {
