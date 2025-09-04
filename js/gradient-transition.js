@@ -60,7 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // For example: home to 2017-2027 = 6 sections = 18 seconds
   // 1967-1977 to 2017-2027 = 5 sections = 15 seconds
   const sectionsToTraverse = Math.abs(totalDistance);
-  const animationDuration = sectionsToTraverse * 6000; // 3 seconds per section
+  const baseAnimationDuration = sectionsToTraverse * 3000; // 3 seconds per section
+  // Cap the maximum duration to prevent overly long animations
+  const animationDuration = Math.min(baseAnimationDuration, 18000); // Max 18 seconds
   
   // Disable CSS transitions for manual control
   container.style.transition = 'none';
@@ -93,7 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function setContainerPosition(position) {
     // Each section is 12.5% wide (100% / 8 sections), so we translate by position * -12.5%
-    const translateX = position * -12.5;
+    // Ensure position is within valid bounds
+    const clampedPosition = Math.max(0, Math.min(position, 7));
+    const translateX = clampedPosition * -12.5;
     container.style.transform = `translateX(${translateX}%)`;
   }
   
@@ -119,14 +123,13 @@ document.addEventListener('DOMContentLoaded', function() {
       setContainerPosition(currentPosition);
       
       // Update active section based on current position
-      const activeIndex = Math.round(currentPosition);
-      updateSectionContent(activeIndex);
+      updateSectionContent(currentPosition);
       
       // Continue animation if not complete
       if (progress < 1) {
         animationId = requestAnimationFrame(animateFrame);
       } else {
-        // Animation complete
+        // Animation complete - ensure exact final position
         isAnimating = false;
         setContainerPosition(endPosition);
         updateSectionContent(endPosition);
@@ -146,7 +149,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add active class to current section
     const sectionKeys = Object.keys(sectionMap);
-    const activeIndex = Math.max(0, Math.min(Math.floor(position + 0.5), sectionKeys.length - 1));
+    // Round to nearest integer and clamp to valid range
+    const activeIndex = Math.max(0, Math.min(Math.round(position), sectionKeys.length - 1));
     
     if (activeIndex >= 0 && activeIndex < sectionKeys.length) {
       const sectionKey = sectionKeys[activeIndex];
