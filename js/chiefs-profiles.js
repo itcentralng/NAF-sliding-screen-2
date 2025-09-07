@@ -376,6 +376,51 @@ const chiefsData = {
         description: "In 2021, the idea to establish a microfinance bank for the NAF was conceived during Air Marshal Amao's tenure. A committee was constituted which led to registrations with CBN and development of a feasibility study for the microfinance bank. The NAF Microfinance Bank was established to primarily avail NAF personnel and their dependents an alternative of specially tailored banking services. Similarly, an objective of the NAF Microfinance Bank was to offer personnel opportunity to enjoy products specially developed to cater to their welfare needs."
       }
     ]
+  },
+  hasan_abubakar: {
+    name: "Air Marshal Hasan Bala Abubakar",
+    period: "2023 - Present",
+    position: "22nd Chief of the Air Staff",
+    birthDate: "11 September 1970",
+    birthPlace: "Nigeria",
+    image: "img/chiefs/image22.jpg",
+    biography: [
+      "Air Marshal Hasan Bala Abubakar was born on 11 September 1970. He is a Nigerian air marshal who currently serves as the Chief of the Air Staff of Nigeria, appointed by President Bola Tinubu on 19 June 2023, succeeding Air Marshal Isiaka Oladayo Amao.",
+      "He brings extensive experience in military aviation and strategic leadership to his role as the 22nd Chief of the Air Staff. His appointment marks a new era of modernization and technological advancement in the Nigerian Air Force.",
+      "Under his leadership, the NAF has continued to evolve and adapt to contemporary security challenges while maintaining its commitment to excellence in air power projection and defense of Nigeria's airspace."
+    ],
+    financeContributions: [
+      {
+        title: "Introduction of CAB Virtual Meetings with all finance officers",
+        period: "2023",
+        description: "In order to facilitate communication and foster a sense of unity and shared purpose among finance personnel, the CAB introduced the conduct of quarterly virtual meetings with all finance officers under Air Marshal Abubakar's leadership. The virtual meetings offered a platform for finance officers to listen and participate in discussions. Also, officers were offered the opportunity to brief the Branch on happenings in their respective units."
+      },
+      {
+        title: "Conduct of tailored in-house training for finance personnel in the A&B Branch",
+        period: "March 2024",
+        description: "In an effort to continually develop the capacity of finance officers and clerks, the CAB directed the conduct of an in-house training in the A&B Branch under Air Marshal Abubakar's guidance. The purpose was to avail finance personnel an opportunity to have a deeper understanding of the budgeting and payment processes initiated by HQ NAF. Also, the training was aimed at providing an opportunity for the personnel to have a first hand feel of the working nature in the A&B Branch."
+      },
+      {
+        title: "Introduction of Intermediate and Advanced Courses for finance personnel in NAFSFA",
+        period: "March 2024",
+        description: "In order to train and develop the capacity of NAF finance personnel, the CAB leveraged a key driver of Air Marshal Abubakar to introduce intermediate and advanced finance courses in NAFSFA. The objective was to close the knowledge gap and continually train finance personnel on the constant evolution of the global finance as a profession."
+      },
+      {
+        title: "Establishment of the NAF Microfinance Bank",
+        period: "2021 - 2024",
+        description: "After obtaining the approval of Air Marshal Abubakar, the CAB pushed for the commissioning of the NAF Microfinance Bank in NAF Valley, Asokoro, Abuja. The NAF Microfinance Bank was established to primarily avail NAF personnel and their dependents an alternative of specially tailored banking services. Similarly, an objective of the NAF Microfinance Bank was to offer personnel opportunity to enjoy products specially developed to cater to their welfare needs."
+      },
+      {
+        title: "Development of curriculum for Intermediate and Advanced Courses for finance personnel in NAFSFA",
+        period: "March 2024",
+        description: "A team of experienced finance officers were tasked to develop curricula for an intermediate and an advanced finance course for finance clerks and officers under Air Marshal Abubakar's leadership. The curricula covered various academic areas that are generally aimed at equipping finance personnel to execute their roles in a constantly evolving profession."
+      },
+      {
+        title: "Relocation of NAFSFA from Badagry to Permanent Site in Ibadan",
+        period: "2025",
+        description: "Under Air Marshal Abubakar's leadership, the Nigerian Air Force School of Finance and Accounts was successfully relocated from Badagry to its permanent site in Ibadan, providing better facilities and enhanced learning environment for finance personnel training."
+      }
+    ]
   }
 };
 
