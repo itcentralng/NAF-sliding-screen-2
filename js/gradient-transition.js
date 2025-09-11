@@ -43,6 +43,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
   
+  // Motor timing calculations based on Arduino code
+  const STEP_DELAY_MICROSECONDS = 2000; // From Arduino stepDelay
+  const MICROSECONDS_PER_MILLISECOND = 1000;
+  const MILLISECONDS_PER_SECOND = 1000;
+  
+  // Position steps from Arduino code
+  const positionSteps = [0, 1333, 2833, 4333, 5833, 7333, 8833];
+  
+  // Function to calculate motor movement time between two positions
+  function calculateMotorTime(fromPos, toPos) {
+    const fromSteps = positionSteps[fromPos] || 0;
+    const toSteps = positionSteps[toPos] || 0;
+    const stepsToMove = Math.abs(toSteps - fromSteps);
+    
+    // Each step takes stepDelay microseconds for HIGH + stepDelay microseconds for LOW
+    const timePerStep = (STEP_DELAY_MICROSECONDS * 2) / MICROSECONDS_PER_MILLISECOND; // Convert to milliseconds
+    const totalTimeMs = stepsToMove * timePerStep;
+    
+    return totalTimeMs;
+  }
+  
   const fromSectionData = sectionMap[fromSection];
   const targetSectionData = sectionMap[targetSection];
   
@@ -56,13 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const endPosition = targetSectionData.position;
   const totalDistance = endPosition - startPosition;
   
-  // Calculate animation duration: 3 seconds per section traversed
-  // For example: home to 2017-2027 = 6 sections = 18 seconds
-  // 1967-1977 to 2017-2027 = 5 sections = 15 seconds
-  const sectionsToTraverse = Math.abs(totalDistance);
-  const baseAnimationDuration = sectionsToTraverse * 3000; // 3 seconds per section
-  // Cap the maximum duration to prevent overly long animations
-  const animationDuration = Math.min(baseAnimationDuration, 18000); // Max 18 seconds
+  // Calculate animation duration based on actual motor movement time
+  const animationDuration = calculateMotorTime(startPosition, endPosition);
+  
+  console.log(`Motor movement from position ${startPosition} to ${endPosition}`);
+  console.log(`Steps to move: ${Math.abs(positionSteps[endPosition] - positionSteps[startPosition])}`);
+  console.log(`Calculated animation duration: ${animationDuration}ms (${(animationDuration/1000).toFixed(1)}s)`);
   
   // Disable CSS transitions for manual control
   container.style.transition = 'none';
